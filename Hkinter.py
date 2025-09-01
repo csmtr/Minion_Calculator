@@ -1,29 +1,47 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Mar  2 16:21:07 2024
-
 @author: Herodirk
 
-A module containing functions to assit in the creation and handling of Tkinter windows
+Hkinter
+A module containing functions to assit in the creation and handling of Tkinter windows and Tkinter variables
 """
 
 import tkinter as tk
 import numpy as np
 
-color_palettes = {"dark": {"background": "black",
-                           "frame_background": "#313338",
-                           "controls_frame": "dim gray",
-                           "widget_background": "#383A40",
-                           "widget_border": "#2E3035",
-                           "active_background": "#2E3035",
-                           "text": "white",
-                           "selected_text": "black",
-                           "selection": "light gray"}}
 
+color_palettes = {
+    "dark": {
+        "background": "black",
+        "frame_background": "#313338",
+        "controls_frame": "dim gray",
+        "widget_background": "#383A40",
+        "widget_border": "#2E3035",
+        "active_background": "#2E3035",
+        "text": "white",
+        "selected_text": "black",
+        "selection": "light gray"
+        },
+    "dark_red": {
+        "background": "black",
+        "frame_background": "#100808",
+        "controls_frame": "#662626",
+        "widget_background": "#441313",
+        "widget_border": "#2C0C0C",
+        "active_background": "#2C0C0C",
+        "text": "white",
+        "selected_text": "black",
+        "selection": "light gray"
+        }
+    }
+
+
+#%% Hkinter
 
 class Hk():
-    def __init__(self, main, windowTitle, windowWidth, windowHeight, palette="dark"):
+    def __init__(self, main, version, windowTitle, windowWidth, windowHeight, palette="dark"):
         """
+        Hk: Hkinter, main class for Hkinter functions
         Initializes Hkinter. Sets the chosen color palette. Configures the main window. Creates dict variables for storage of switches and frames.
 
         Parameters
@@ -45,6 +63,7 @@ class Hk():
 
         """
         self.main = main
+        self.version = version
         self.main.title(windowTitle)
         self.main.colors = color_palettes[palette]
         self.main.configure(width=windowWidth, height=windowHeight, background=self.main.colors["background"])
@@ -60,27 +79,16 @@ class Hk():
 
         self.main.switches = {}
         self.main.frames = {}
+        self.main.var_dict = {}
+        self.edit_vars_active = False
         return
 
-    def createFrames(self, frame_keys=[], grid_frames=True, grid_size=0.96, border=0.01, relControlsHeight=0.07):
+    def createControls(self, relControlsHeight=0.07):
         """
-        Saves and places controls frame and additional frames according to inputted matrix.
-        Maxtric can be any size. Fill empty spaces with None.
+        Saves and places controls frame with Stop button.
 
         Parameters
         ----------
-        frame_keys : list
-            2 dimensional array of frame keys as strings. The default is [].
-            [
-                [column 1 row 1, column 2 row 1],
-                [column 1 row 2, column 2 row 2],
-            ]
-        grid_frames : bool, optional
-            DESCRIPTION. The default is True.
-        grid_size : float, optional
-            Relative size of grid frame in the parent frame. Float between 0 and 1. The default is 0.96.
-        border : float, optional
-            Relative size of the border thickness in the main window. Float between 0 and 1. The default is 0.01.
         relControlsHeight : float, optional
             Relative height of the control frame in the main window. Float between 0 and 1. The default is 0.07.
 
@@ -94,14 +102,47 @@ class Hk():
 
         self.main.stopB = tk.Button(self.main.frames["controls"], text='Stop', command=self.main.quit)
         self.main.stopB.place(relx=0.99, rely=0.5, anchor="e")
+        return
 
+    def createFrames(self, parent, frame_keys=[], grid_frames=True, grid_size=0.96, border=0.01, relControlsHeight=0.07):
+        """
+        Saves and places frames according to inputted matrix.
+        Maxtric can be any size. Fill empty spaces with None.
+
+        Parameters
+        ----------
+        parent : Tk object
+            parent object of the frames
+        frame_keys : list
+            2 dimensional array of frame keys as strings. The default is [].
+            [
+                [column 1 row 1, column 2 row 1],
+                [column 1 row 2, column 2 row 2],
+            ]
+        grid_frames : bool, optional
+            Toggle to add a frame in each frame named {frame name}_grid acting as a default translation for widgets. The default is True.
+        grid_size : float, optional
+            Relative size of grid frame in the parent frame. Float between 0 and 1. The default is 0.96.
+        border : float, optional
+            Relative size of the border thickness in the main window. Float between 0 and 1. The default is 0.01.
+        controls : bool, optional
+            Toggle for giving the parent frame a controls frame
+        relControlsHeight : float, optional
+            Relative height of the control frame in the main window. Float between 0 and 1. The default is 0.07.
+            Can be set to 0 if Control frame was not used
+
+        Returns
+        -------
+        None.
+
+        """
         self.main.frame_amount = np.size(frame_keys)
         rel_w = 1 / max([len(frame_keys[i]) for i in range(len(frame_keys))])
         rel_h = (1 - relControlsHeight) / len(frame_keys)
         for row_loc, row_keys in enumerate(frame_keys):
             for col_loc, key in enumerate(row_keys):
                 if key is not None:
-                    self.main.frames[key] = tk.Frame(self.main, background=self.main.colors["frame_background"])
+                    self.main.frames[key] = tk.Frame(parent, background=self.main.colors["frame_background"])
                     self.main.frames[key].place(rely=row_loc * rel_h + 0.5 * border, relx=rel_w * col_loc + 0.5 * border, relwidth=rel_w - border, relheight=rel_h - border)
                     if grid_frames:
                         self.main.frames[key + "_grid"] = tk.Frame(self.main.frames[key], background=self.main.colors["frame_background"])
@@ -126,7 +167,7 @@ class Hk():
 
         Returns
         -------
-        tl.Label
+        tk.Label
             Fully constructed label ready to be placed.
 
         """
@@ -165,7 +206,7 @@ class Hk():
             var.set(initial)
         return var
 
-    def defVarI(self, dtype, frame, L_text, initial=None, options=[], cmd=None):
+    def defVarI(self, dtype, frame, L_text, initial=None, options=[], cmd=None, checkbox_text=None):
         """
         defVarI: define variable input
         Generates a Tkinter variable, a label and an input widget.
@@ -187,6 +228,8 @@ class Hk():
             List of options for an option menu. List must contain items of type dtype. The default is [].
         cmd : function, optional
             Function that runs when an option in the option menu is. The default is None.
+        checkbox_text : str, optional
+            Text that will be displayed next to the checkbox if dtype is bool
 
         Returns
         -------
@@ -204,6 +247,8 @@ class Hk():
                 entry = tk.Entry(frame, textvariable=var)
         else:
             entry = tk.Checkbutton(frame, variable=var, background=self.main.colors["frame_background"], command=cmd)
+            if checkbox_text is not None:
+                entry.configure(text=checkbox_text)
         label = self.genLabel(frm=frame, txt=L_text)
         return var, [label, entry]
 
@@ -271,7 +316,7 @@ class Hk():
             output_list.configure(height=h)
         return var, [text_label, output_list]
 
-    def fill_grid(self, grid_arr, frame):
+    def fill_grid(self, grid_arr, grid_frame, stick='w'):
         """
         Places widgets in a grid according to the inputted matrix.
 
@@ -285,6 +330,8 @@ class Hk():
             ]
         frame : tk.Frame
             Frame where the label and output widget will be generated in.
+        stick : str
+            First letter letter of a cardinal direction for which side to align the widgets to. 'n', 'e', 's', 'w'.
 
         Returns
         -------
@@ -294,9 +341,9 @@ class Hk():
         for rowindex, row in enumerate(grid_arr):
             for colindex, col in enumerate(row):
                 if col is None:
-                    self.genLabel(frm=frame, txt="").grid(row=rowindex, column=colindex)
+                    self.genLabel(frm=grid_frame, txt="").grid(row=rowindex, column=colindex)
                     continue
-                col.grid(row=rowindex, column=colindex, sticky='w')
+                col.grid(row=rowindex, column=colindex, sticky=stick)
         return
 
     def fill_arr(self, arr, frame, anc="w", rel_start=[0.01, 0.5], rel_next=[1, 0.5], abs_next=[10, 0]):
@@ -353,16 +400,18 @@ class Hk():
         ----------
         ID : str
             ID for the switch to call it with toggleSwitch.
-        obj : any Tkinter widget
-            DESCRIPTION.
-        loc : "grid" or a function
-            Location of the widget, grid if the widget is part of a grid or a function that places the widget.
+        obj : any Tkinter widget or list of widgets
+            The objects that will be part of the switch, can be one singular widget or a list of widgets.
+        loc : "grid", dict or list
+            Location of the widget, "grid" if the widget is part of a grid, a dictionary with arguments for .place() or
+            a list of dictionaries for multiple objects.
+            If obj and loc are lists, they should be the same length
         control : str, int, float, optional
             Control variable to determine if the widget should be visible or not. None if there is not control. The default is None.
         negate : bool, optional
             Boolean to reverse the relation with the control. The default is False.
         initial : bool, optional
-            Initial state of the visibility of the widget. 
+            Initial state of the visibility of the widget.
             For widgets in a grid, it assumes that they are already placed, so initial==True would not do anything extra.
             For widgets outside a grid, it assumes that they are not placed yet, so initial==False would not do anything extra.
             The default is True.
@@ -374,7 +423,7 @@ class Hk():
         """
         self.main.switches[ID] = {"state": initial, "obj": obj, "loc": loc, "control": control, "negate": negate}
         if loc != "grid" and initial is True:
-            loc(obj)
+            obj.place(**loc)
         if loc == "grid" and initial is False:
             for widget in obj:
                 widget.grid_remove()
@@ -389,7 +438,7 @@ class Hk():
         ID : str
             Identifier of the switch.
         control : str, int, float, optional
-            Control variable to determine if the widget should be visible or not. None to force a switch. The default is None. The default is None.
+            Control variable to determine if the widget should be visible or not. None to force a switch. The default is None.
 
         Returns
         -------
@@ -431,9 +480,69 @@ class Hk():
                     obj.grid()
             else:
                 for obj, loc in zip(objs, locs):
-                    loc(obj)
-
+                    obj.place(**loc)
             self.main.switches[ID]["state"] = True
+        return
+
+    def createSwitchCall(self, ID, controlvar=None):
+        """
+        Creates a command for a GUI widget that calls a switch.
+
+        Parameters
+        ----------
+        ID : str
+            Identifier of the switch.
+        controlvar : str or None
+            Variable key for the switch control. "self" to make the command send the value in the widget as control. None to force a switch. The default is None.
+
+        Returns
+        -------
+        lambda function
+            Command for a GUI widget that calls a switch
+
+        """
+        if controlvar == "self":
+            return lambda x: self.toggleSwitch(ID, x)
+        elif controlvar is None:
+            return lambda: self.toggleSwitch(ID, None)
+        elif self.version == "MINION":
+            return lambda: self.toggleSwitch(ID, self.main.variables[controlvar]["var"].get())
+        else:
+            return lambda: self.toggleSwitch(ID, self.main.var_dict[controlvar].get())
+
+    def createShowHideToggle(self, parent_var_key, ID, place_args={"relx": 1, "x": 3, "rely": 0.5, "anchor": 'w'}):
+        """
+        Creates and places a button that forces a switch, or runs any inputted function.
+
+        Parameters
+        ----------
+        parent_var_key : str
+            Variable key of the widget where the button should anchor to.
+        ID : str or function
+            As string it's the identifier of the switch. As function it is any function.
+        place_args : dict
+            Dictionary containing the arguments for the .place function of Tkinter.
+            Default is {"relx": 1, "x": 3, "rely": 0.5, "anchor": 'w'}
+
+        Returns
+        -------
+        None.
+        """
+        if self.version == "MINION":
+            button_frame = self.main.variables[parent_var_key]["frame"]
+        else:
+            button_frame = self.main.var_dict[parent_var_key].frame
+        if type(ID) is str:
+            button = tk.Button(self.main.frames[button_frame], text="Toggle extra options", border=0, borderwidth=0, command=self.createSwitchCall(ID))
+        elif str(type(ID)) == "<class 'function'>":
+            button = tk.Button(self.main.frames[button_frame], text="Toggle extra options", border=0, borderwidth=0, command=ID)
+        if place_args is None:
+            return button
+        if self.version == "MINION":
+            button_anchor = self.main.variables[parent_var_key]["widget"][-1]
+        else:
+            button_anchor = self.main.var_dict[parent_var_key].widget[-1]
+        button.place(in_=button_anchor, **place_args)
         return
 
     def input_args(self, func, execute=False):
@@ -583,80 +692,130 @@ class Hk():
         inputsW.destroy()
         return self.vars_out
 
+    def edit_vars(self, exit_function, variables=[]):
+        """
+        Creates a pop-up that asks for values for the inputted variable keys.
 
-#%% test enviroment
-if __name__ == "__main__":
-    class test_calc(tk.Tk):
-        def __init__(self):
-            super().__init__()
-            self.hk = Hk(self, "Test", 500, 500)
+        Parameters
+        ----------
+        exit_function : function
+            Function run after clicking close.
+        variables : list
+            List containing variable keys as strings.
 
-            self.hk.createFrames([["inputs", "outputs"]])
+        Returns
+        -------
+        list
+            A list containing the inputted values for the variables.
+            Returns an equal dimension list containing only None if the action was canceled
 
-            test_text = tk.Label(self.frames["controls"], text="test")
-            test_text.pack()
+        """
+        if self.edit_vars_active is True:
+            print("WARNING: Already editing variables")
+            return
+        else:
+            self.edit_vars_active = True
 
-            self.var, self.varI = self.hk.defVarI(frame=self.frames["inputs"], dtype=float, L_text="Variable:", initial=0.0)
-            self.negative, self.negativeI = self.hk.defVarI(frame=self.frames["inputs"], dtype=bool, L_text="Negative:", initial=False)
-            self.out, self.outO = self.hk.defVarO(frame=self.frames["outputs"], dtype=float, L_text="Squared:", initial=0.0)
-            self.previous, self.previousO = self.hk.defListO(frame=self.frames["outputs"], L_text="History:")
-            self.history = []
-            self.show_A, self.show_AI = self.hk.defVarI(bool, self.frames["inputs"], L_text="A", initial=False)
-            self.hk.defSwitch("A", self.show_AI, loc="grid")
-            self.show_B, self.show_BI = self.hk.defVarI(bool, self.frames["inputs"], L_text="BBBBBBBBB", initial=False)
-            self.hk.defSwitch("B", self.show_BI[0], loc=lambda x: x.place(in_=self.button, rely=2, anchor="nw"), initial=False)
-            self.show_zero = tk.Label(self.frames["inputs"], text="Is zero")
-            self.hk.defSwitch("zero", self.show_zero, "grid", control=0.0, initial=True)
+        self.edit_vars_mainframe = tk.Frame(self.main, background=self.main.colors["background"])
+        self.edit_vars_mainframe.place(anchor="c", relx=0.5, rely=0.5, relwidth=0.2, relheight=0.5)
+        
+        self.createFrames(self.edit_vars_mainframe, frame_keys=[["edit_vars"]], grid_frames=True, grid_size=0.96, border=0.007, relControlsHeight=0.1)
+        self.edit_vars_options = tk.Frame(self.edit_vars_mainframe, background=self.main.colors["controls_frame"])
+        self.edit_vars_options.place(rely=0.9, relheight=0.1, relwidth=1)
 
-            self.button = tk.Button(self.frames["inputs"], text='Test', command=self.testfunc)
-            # self.button.place(relx=0, rely=0.5, anchor="w")
+        self.edit_vars_inputs = self.main.frames["edit_vars_grid"]
+        del self.main.frames["edit_vars_grid"]
+        del self.main.frames["edit_vars"]
 
-            self.testbutton = tk.Button(self.frames["outputs"], text='Add', command=lambda x=self.some_func: self.hk.input_args(func=x, execute=True))
-
-            self.testbutton2 = tk.Button(self.frames["outputs"], text='Multiply', command=self.another_func)
-
-            grid_arr = [self.varI,
-                        self.negativeI,
-                        self.show_AI,
-                        [self.button],
-                        [self.show_zero]]
-            self.hk.fill_grid(grid_arr, self.frames["inputs"])
-
-            grid_arr = [self.outO,
-                        self.previousO,
-                        [self.testbutton, self.testbutton2]]
-            self.hk.fill_grid(grid_arr, self.frames["outputs"])
-
-        def testfunc(self):
-            number = self.var.get()
-            squared = number**2
-            if self.negative.get():
-                squared *= -1
-            self.out.set(squared)
-            self.history.append(squared)
-            self.previous.set(self.history)
-            if self.show_A.get() is True:
-                self.show_BI[0].configure(text="AAAAA")
+        widgets_dict = {}
+        for var_key in variables:
+            if self.version == "MINION":
+                options = self.main.variables[var_key]["options"]
             else:
-                self.show_BI[0].configure(text="BBBBBBBBB")
-            self.hk.toggleSwitch("A", None)
-            self.hk.toggleSwitch("B", None)
-            self.hk.toggleSwitch("zero", squared)
-            return
+                options = self.main.var_dict[var_key].options
 
-        def some_func(self, x=0.0, y=0.0, name="Name"):
-            print(x + y)
-            print(name)
-            return
+            if self.version == "MINION":
+                L_text = self.main.variables[var_key]["display"]
+            else:
+                L_text = self.main.var_dict[var_key].display
 
-        def another_func(self):
-            inputs = self.hk.input_vars({"Number 1": [1, -1], "Number 2": float})
-            print(inputs)
-            return
+            if self.version == "MINION":
+                var = self.main.variables[var_key]["var"]
+            else:
+                var = self.main.var_dict[var_key].tkvar
 
-    def start_test():
-        test = test_calc()
-        test.mainloop()
-        # del test.hk
-        test.destroy()
+            if len(options) == 0:
+                input_widget = tk.Entry(self.edit_vars_inputs, textvariable=var)
+            else:
+                input_widget = tk.OptionMenu(self.edit_vars_inputs, var, *options)
+            widgets_dict[var_key] = [self.genLabel(frm=self.edit_vars_inputs, txt=L_text + ":"), input_widget]
+
+        self.fill_grid(widgets_dict.values(), self.edit_vars_inputs)
+
+        closeB = tk.Button(self.edit_vars_options, text="Close", command=lambda: self.edit_confirm(exit_func=exit_function, vars=variables))
+        closeB.place(relx=0.5, rely=0.5, anchor="c")
+        return
+
+    def edit_confirm(self, exit_func, vars=[]):
+        try:
+            if self.version == "MINION":
+                for var_key in vars: 
+                    self.main.variables[var_key]["var"].get()
+            else:
+                for var_key in vars:
+                    self.main.var_dict[var_key].get()
+        except tk._tkinter.TclError:
+            print("WARNING: Inputted wrong data type, please try again")
+        else:
+            if exit_func is not None:
+                exit_func()
+            self.edit_vars_mainframe.destroy()
+            self.edit_vars_active = False
+        return
+
+
+#%% Hvariable
+
+class Hvar():
+    def __init__(self, hk, key, vtype, dtype, display, frame, initial, width=0, height=0, options=[], command=None, noWidget=False, switch_initial=None, checkbox_text=None):
+        hk.main.var_dict[key] = self
+        self.vtype = vtype
+        self.dtype = dtype
+        self.display = display
+        self.frame = frame
+        self.initial = initial
+        if self.dtype == bool:
+            self.options = [False, True]
+        else:
+            self.options = options
+        self.command = command
+        self.noWidget = noWidget
+        self.switch_initial = switch_initial
+        self.list_width = width
+        self.list_height = height
+        self.checkbox_text = checkbox_text
+        self.tkvar = None
+        self.widget = None
+        self.switch_output = None
+
+        if self.vtype == "input" and self.noWidget is False:
+            self.tkvar, self.widget = hk.defVarI(dtype=self.dtype, frame=hk.main.frames[self.frame],
+                                                 L_text=f"{self.display}:", initial=self.initial,
+                                                 options=self.options, cmd=self.command, checkbox_text=self.checkbox_text)
+        elif self.vtype == "output":
+            self.tkvar, self.widget = hk.defVarO(dtype=self.dtype, frame=hk.main.frames[self.frame],
+                                                 L_text=f"{self.display}:", initial=self.initial,)
+        elif self.vtype == "input" and self.noWidget is True:
+            self.tkvar = hk.defVar(dtype=self.dtype, initial=self.initial)
+        elif self.vtype == "list":
+            self.tkvar, self.widget = hk.defListO(frame=hk.main.frames[self.frame], L_text=f"{self.display}:", h=self.list_height, w=self.list_width)
+        if self.switch_initial is not None and self.noWidget is False:
+            self.switch_output, widget = hk.defVarI(dtype=bool, frame=hk.main.frames[self.frame], L_text="", initial=self.switch_initial)
+            self.widget.append(widget[-1])
+
+    def get(self):
+        return self.tkvar.get()
+
+    def set(self, value):
+        self.tkvar.set(value)
         return
