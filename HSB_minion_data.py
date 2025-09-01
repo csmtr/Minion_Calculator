@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jan  4 15:39:29 2024
-
 @author: Herodirk
 
 File containing data of hypixel skyblock minions.
@@ -21,7 +19,7 @@ as long as you share them when sharing calculation results that use them.
 Items that are not on bazaar will have "# not in bazaar" behind the display name,
 some of these are on the auction house and have "(AH)" behind "# not in bazaar",
 these AH only items must have their custom prices updated manually,
-custom prices for auction house only item last updated on: 2024-9-8
+custom prices for auction house only item last updated on: 2025-8-31
 
 There are a lot of unknown things here, any unknowns are written next to it in #-comments.
 If information has been confirmed, there is "# correct" behind it
@@ -88,8 +86,8 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'ENCHANTED_SULPHUR_CUBE': {'display': 'Enchanted Sulphur Cube',
                                        "prices": {'npc': 256000},
                                        'xp': {'mining': 0}},
-            'CORRUPTED_FRAGMENT': {'display': 'Corrupted Fragment',  # not in bazaar
-                                   "prices": {'npc': 20},
+            'CORRUPTED_FRAGMENT': {'display': 'Corrupted Fragment',
+                                   "prices": {'npc': 1},
                                    'xp': {'mining': 0}},
             'COBBLESTONE': {'display': 'Cobblestone',
                             "prices": {'npc': 1},
@@ -163,6 +161,9 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'ENCHANTED_CLAY_BALL': {'display': 'Enchanted Clay',
                                     "prices": {'npc': 480},
                                     'xp': {'fishing': 16}},
+            'ENCHANTED_CLAY_BLOCK': {'display': 'Enchanted Clay Block', # all correct
+                                     "prices": {'npc': 76800},
+                                     'xp': {'fishing': 2560}},  
             'CLAY_BRICK': {'display': 'Brick',  # not in bazaar
                            "prices": {'npc': 2},
                            'xp': {'mining': 0}},
@@ -300,7 +301,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                             'xp': {'mining': 0.4}},
             'ENCHANTED_ENDSTONE': {'display': 'Enchanted End Stone',
                                    "prices": {'npc': 320},
-                                   'xp': {'mining': 64}},  # check xp amount in game (official wiki: 32 mining xp)
+                                   'xp': {'mining': 64}},  # correct
             'MITHRIL_ORE': {'display': 'Mithril',
                             "prices": {'npc': 8},
                             'xp': {'mining': 0.4}},
@@ -321,22 +322,22 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'WHEAT': {'display': 'Wheat',
                       "prices": {'npc': 6},
                       'xp': {'farming': 0.2}},
-            'HAY_BLOCK': {'display': 'Hay Bale',
+            'HAY_BLOCK': {'display': 'Hay Bale',  # not produced anymore by minions
                           "prices": {'npc': 54},
                           'xp': {'farming': 1.8}},
             'SEEDS': {'display': 'Seeds',
                       "prices": {'npc': 3},
                       'xp': {'farming': 0.1}},
             'ENCHANTED_BREAD': {'display': 'Enchanted Bread',
-                                "prices": {'npc': 60},
-                                'xp': {'farming': 1.8},  # check price and xp in game again, if it is correct, put # correct behind it
+                                "prices": {'npc': 60},  # correct
+                                'xp': {'farming': 1.8},  # not produced anymore by minions
                                 "upgrade": {'speed': 5, 'drop': 1, 'duration': 43200}},
-            'ENCHANTED_HAY_BLOCK': {'display': 'Enchanted Hay Bale',
-                                    "prices": {'npc': 7776},
-                                    'xp': {'farming': 288}},
-            'TIGHTLY_TIED_HAY_BALE': {'display': 'Tightly-Tied Hay Bale',
-                                      "prices": {'npc': 1119744},
-                                      'xp': {'farming': 41472}},
+            'ENCHANTED_WHEAT': {'display': 'Enchanted Wheat',
+                                "prices": {'npc': 960},
+                                'xp': {'farming': 32}},  # correct
+            'ENCHANTED_HAY_BALE': {'display': 'Enchanted Hay Bale',
+                                   "prices": {'npc': 153600},
+                                   'xp': {'farming': 5120}},  # correct
             'ENCHANTED_SEEDS': {'display': 'Enchanted Seeds',
                                 "prices": {'npc': 480},
                                 'xp': {'farming': 16}},
@@ -370,6 +371,8 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'ENCHANTED_CARROT': {'display': 'Enchanted Carrot',  # correct
                                  "prices": {'npc': 480},
                                  'xp': {'farming': 16}},
+            'ENCHANTED_GOLDEN_CARROT': {'display': 'Enchanted Golden Carrot',
+                                        "prices": {'npc': 61440}},  # correct
             'POTATO_ITEM': {'display': 'Potato',
                             "prices": {'npc': 3},
                             'xp': {'farming': 0.1}},
@@ -386,11 +389,11 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                                "prices": {'npc': 10},
                                'xp': {'farming': 0.3}},
             'HUGE_MUSHROOM_2': {'display': 'Red Mushroom Block',
-                                "prices": {'npc': 10},  # check price and xp again, if it is correct, put # correct behind it
-                                'xp': {'farming': 0.3}},
+                                "prices": {'npc': 10},  # correct
+                                'xp': {'farming': 0.3}},  # correct
             'HUGE_MUSHROOM_1': {'display': 'Brown Mushroom Block',
-                                "prices": {'npc': 10},  # check price and xp again, if it is correct, put # correct behind it
-                                'xp': {'farming': 0.3}},
+                                "prices": {'npc': 10},  # correct
+                                'xp': {'farming': 0.3}},  # correct
             'ENCHANTED_RED_MUSHROOM': {'display': 'Enchanted Red Mushroom',
                                        "prices": {'npc': 1600},
                                        'xp': {'farming': 48}},
@@ -411,16 +414,18 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                            'xp': {'farming': 0.2}},
             'ENCHANTED_CACTUS_GREEN': {'display': 'Enchanted Cactus Green',
                                        "prices": {'npc': 480},
-                                       'xp': {'farming': 80}},
+                                       'xp': {'farming': 80}},  # correct
             'ENCHANTED_CACTUS': {'display': 'Enchanted Cactus',
                                  "prices": {'npc': 76800},
-                                 'xp': {'farming': 12800}},
+                                 'xp': {'farming': 12800}},  # correct
             'INK_SACK:3': {'display': 'Cocoa Beans',
                            "prices": {'npc': 3},
                            'xp': {'farming': 0.2}},
             'ENCHANTED_COCOA': {'display': 'Enchanted Cocoa Beans',
                                 "prices": {'npc': 480},
                                 'xp': {'farming': 32}},
+            'ENCHANTED_COOKIE': {'display': 'Enchanted Cookie',
+                                 "prices": {'npc': 61500}},  # correct
             'SUGAR_CANE': {'display': 'Sugar Cane',
                            "prices": {'npc': 4},
                            'xp': {'farming': 0.1}},
@@ -525,38 +530,38 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                                       'xp': {'combat': 9}},
             'ENCHANTED_EYE_OF_ENDER': {'display': 'Enchanted Eye of Ender',
                                        "prices": {"custom": 6500}},
-            'DYE_BYZANTIUM': {'display': 'Byzantium Dye',  # not in bazaar (AH)
+            'DYE_BYZANTIUM': {'display': 'Byzantium Dye',  # not in bazaar (AH), also not used
                               "prices": {'npc': 0},
-                              'xp': {'combat': 0}},  # suggested to keep at 0, because dyes are incorrectly implemented currently
+                              'xp': {'combat': 0}},
             'ABSOLUTE_ENDER_PEARL': {'display': 'Absolute Ender Pearl',
                                      "prices": {'npc': 11200},
-                                     'xp': {'combat': 720}},  # check xp again, if it is correct, put # correct behind it
+                                     'xp': {'combat': 720}},  # correct
             'CRUDE_GABAGOOL': {'display': 'Crude Gabagool',
                                "prices": {'npc': 1},
                                'xp': {'combat': 0}},
             'VERY_CRUDE_GABAGOOL': {'display': 'Very Crude Gabagool',
                                     "prices": {'npc': 1},  # correct
                                     'xp': {'combat': 0}},
-            'DYE_FLAME': {'display': 'Flame Dye',  # not in bazaar (AH)
+            'DYE_FLAME': {'display': 'Flame Dye',  # not in bazaar (AH), also not used
                           "prices": {'npc': 0},
-                          'xp': {'combat': 0}},  # suggested to keep at 0, because dyes are incorrectly implemented currently
+                          'xp': {'combat': 0}},
             'CHILI_PEPPER': {'display': 'Chili Pepper',
                              "prices": {'npc': 5000},
                              'xp': {'combat': 0}},
             'STUFFED_CHILI_PEPPER': {'display': 'Stuffed Chili Pepper',
-                                     "prices": {'npc': 200000},  # check price again, if it is correct, put # correct behind it
+                                     "prices": {'npc': 200000},  # correct
                                      'xp': {'combat': 0}},
             'INFERNO_VERTEX': {'display': 'Inferno Vertex',
-                               "prices": {'npc': 0, "custom": 6500000},
+                               "prices": {'npc': 0},
                                'xp': {'combat': 0}},
             'INFERNO_APEX': {'display': 'Inferno Apex',
-                             "prices": {'npc': 0, "custom": 150000000},
+                             "prices": {'npc': 0},
                              'xp': {'combat': 0}},
             'REAPER_PEPPER': {'display': 'Reaper Pepper',
                               "prices": {'npc': 0},
                               'xp': {'combat': 0}},
             'GABAGOOL_THE_FISH': {'display': 'Gabagool The Fish',  # not in bazaar (AH)
-                                  "prices": {'npc': 0},
+                                  "prices": {"custom": 13000000},  # 2025-8-31
                                   'xp': {'combat': 0}},  # unsure if correctly implemented (just like dyes)
             'HYPERGOLIC_IONIZED_CERAMICS': {'display': 'Hypergolic Ionized Ceramics',
                                             "prices": {'npc': 0},
@@ -582,15 +587,17 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'ENCHANTED_GUNPOWDER': {'display': 'Enchanted Gunpowder',
                                     "prices": {'npc': 640},
                                     'xp': {'combat': 48}},
+            'ENCHANTED_FIREWORK_ROCKET': {'display': 'Enchanted Firework Rocket',
+                                          "prices": {'npc': 41000}},  # correct
             'STRING': {'display': 'String',
                        "prices": {'npc': 3},
                        'xp': {'combat': 0.2}},
             'SPIDER_EYE': {'display': 'Spider Eye',
                            "prices": {'npc': 3},
                            'xp': {'combat': 0.3}},
-            'ENCHANTED_STRING': {'display': 'Enchanted String',  # correct
-                                 "prices": {'npc': 576},
-                                 'xp': {'combat': 32}},
+            'ENCHANTED_STRING': {'display': 'Enchanted String',
+                                 "prices": {'npc': 576},  # correct
+                                 'xp': {'combat': 38}},  # correct
             'ENCHANTED_SPIDER_EYE': {'display': 'Enchanted Spider Eye',
                                      "prices": {'npc': 480},
                                      'xp': {'combat': 48}},
@@ -620,9 +627,11 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'GHAST_TEAR': {'display': 'Ghast Tear',
                            "prices": {'npc': 16},
                            'xp': {'combat': 0.5}},
-            'ENCHANTED_GHAST_TEAR': {'display': 'Enchanted Ghast Tear',  # correct
+            'ENCHANTED_GHAST_TEAR': {'display': 'Enchanted Ghast Tear',
                                      "prices": {'npc': 80},
-                                     'xp': {'combat': 7.5}},
+                                     'xp': {'combat': 7.5}},  # correct
+            'SILVER_FANG': {'display': 'Silver Fang',  # no xp entry is correct, cannot be made in minion
+                            "prices": {'npc': 2000}},
             'SLIME_BALL': {'display': 'Slimeball',
                            "prices": {'npc': 5},
                            'xp': {'combat': 0.2}},
@@ -645,8 +654,8 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                                    "prices": {'npc': 640},
                                    'xp': {'farming': 16}},
             'ENCHANTED_LEATHER': {'display': 'Enchanted Leather',
-                                  "prices": {'npc': 1700},  # correct
-                                  'xp': {'farming': 115}},  # check xp again, if it is correct, put # correct behind it
+                                  "prices": {'npc': 480},  # correct
+                                  'xp': {'farming': 115}},  # correct
             'PORK': {'display': 'Raw Porkchop',  # correct
                      "prices": {'npc': 5},
                      'xp': {'farming': 0.2}},
@@ -673,7 +682,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                                   'xp': {'farming': 32}},
             'ENCHANTED_EGG': {'display': 'Enchanted Egg',
                               "prices": {'npc': 432},  # correct
-                              'xp': {'farming': 115},  # check xp in game 144*0.2 != 115
+                              'xp': {'farming': 115},  # correct
                               "upgrade": {'cost': 0, 'speed': 0, 'drop': 1,
                                           'special': {"type": "add", "item": {"EGG": 1}}}},
             'SUPER_EGG': {'display': 'Super Enchanted Egg',
@@ -706,14 +715,17 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'RABBIT_HIDE': {'display': 'Rabbit Hide',
                             "prices": {'npc': 5},
                             'xp': {'farming': 0.2}},
-            'ENCHANTED_RABBIT': {'display': 'Enchanted Raw Rabbit',
+            'ENCHANTED_RABBIT': {'display': 'Enchanted Raw Rabbit',  # both correct
                                  "prices": {'npc': 640},
                                  'xp': {'farming': 16}},
-            'ENCHANTED_RABBIT_FOOT': {'display': 'Enchanted Rabbit Foot',
+            'ENCHANTED_COOKED_RABBIT': {'display': 'Enchanted Cooked Rabbit',  # both correct
+                                        "prices": {'npc': 102400},
+                                        'xp': {'farming': 2560}},
+            'ENCHANTED_RABBIT_FOOT': {'display': 'Enchanted Rabbit Foot',  # both correct
                                       "prices": {'npc': 800},
                                       'xp': {'farming': 32}},
-            'ENCHANTED_RABBIT_HIDE': {'display': 'Enchanted Rabbit Hide',  # correct
-                                      "prices": {'npc': 2880},
+            'ENCHANTED_RABBIT_HIDE': {'display': 'Enchanted Rabbit Hide',  # both correct
+                                      "prices": {'npc': 800},
                                       'xp': {'farming': 115}},
             'LOG': {'display': 'Oak Wood',
                     "prices": {'npc': 2},
@@ -782,7 +794,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                               "prices": {},
                               "upgrade": {'speed': 35, 'drop': 1, 'duration': 0}},
             'EVERBURNING_FLAME': {'display': 'Everburning Flame',  # not in bazaar (AH)
-                                  "prices": {"custom": 80000000},
+                                  "prices": {"custom": 15500000},  # 2025-8-31
                                   "upgrade": {'speed': 40, 'drop': 1, 'duration': 0}},
             'INFERNO_FUEL': {'display': 'Inferno Minion Fuel',
                              "prices": {"custom": 1},  # this custom price will be automatically updated by the calculator based on grade and distilate
@@ -828,7 +840,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                                    "upgrade": {'cost': 0, 'speed': 20, 'drop': 1,
                                                'special': {"type": "None"}}},
             'KRAMPUS_HELMET': {'display': 'Krampus Helmet',  # not in bazaar (AH)
-                               "prices": {"custom": 650000},  # take this price when Jerry's Workshop is open
+                               "prices": {"custom": 500000},  # 2025-8-31, take this price when Jerry's Workshop is open
                                "upgrade": {'cost': 0, 'speed': 0, 'drop': 1,
                                            'special': {"type": "generate", "item": {"RED_GIFT": 1}, "chance": 0.000045}}},
             'LESSER_SOULFLOW_ENGINE': {'display': 'Lesser Soulflow Engine',
@@ -850,7 +862,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'ENCHANTED_SHEARS': {'display': 'Enchanted Shears',  # not in bazaar (AH)
                                  "prices": {"custom": 1600},  # = 320 iron from Iron Forger
                                  "upgrade": {'cost': 0, 'speed': 0, 'drop': 1,
-                                             'special': {"type": "add", "item": {"WOOL": 1.5}}}},  # do a better test, it might be 2
+                                             'special': {"type": "add", "item": {"WOOL": 2}}}},  # probably correct, not entirely sure
             'SLEEPY_HOLLOW': {'display': 'Sleepy Hollow',
                               "prices": {},
                               "upgrade": {'cost': 0, 'speed': 0, 'drop': 1,
@@ -903,6 +915,83 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                               "prices": {"custom": 350}},
             "TARANTULA_SILK": {'display': "Tarantula Silk",
                                "prices": {"custom": 250000}},
+            "FREE_WILL": {'display': "Free Will",
+                          'prices': {}},
+            "POTATO_TALISMAN": {'display': "Potato Talisman",  # not in bazaar (AH) 
+                                'prices': {"custom": 45000000}},  # 2025-8-31
+            "SMALL_ENCHANTED_CHEST": {'display': "Small Storage",
+                                      'prices': {}},
+            "MEDIUM_ENCHANTED_CHEST": {'display': "Medium Storage",
+                                      'prices': {}},
+            "LARGE_ENCHANTED_CHEST": {'display': "Large Storage",
+                                      'prices': {}},
+            "XLARGE_ENCHANTED_CHEST": {'display': "X-Large Storage",
+                                       'prices': {}},
+            "XXLARGE_ENCHANTED_CHEST": {'display': "XX-Large Storage",
+                                        'prices': {}},
+            "PRISMARINE:1": {'display': "Prismarine Bricks",
+                             'prices': {'npc': 5},
+                             'xp': {'mining': 0}},
+            "HUNTER_KNIFE": {'display': "Hunter Knife",
+                             "prices": {"custom": 500000},  # 500k from Rusty
+                             "upgrade": {'cost': 0, 'speed': 0, 'drop': 1,
+                                         'special': {"type": "replace", "list": {"POTATO_ITEM": "FRENCH_FRIES"}}}},
+            "FRENCH_FRIES": {'display': "French Fries",
+                             'prices': {"npc": 1},
+                             'xp': {'farming': 0}},
+            'PET_ITEM_MINING_SKILL_BOOST_COMMON': {'display': 'Common Mining Exp Boost',  # not in bazaar (Zog)
+                                                   'prices': {'custom': 60000}},
+            'PET_ITEM_MINING_SKILL_BOOST_UNCOMMON': {'display': 'Uncommon Mining Exp Boost',  # not in bazaar (Zog)
+                                                   'prices': {'custom': 250000}},
+            'PET_ITEM_MINING_SKILL_BOOST_RARE': {'display': 'Rare Mining Exp Boost',  # not in bazaar (AH)
+                                                 'prices': {'custom': 50000}},  # 2025-8-31
+            'PET_ITEM_FARMING_SKILL_BOOST_COMMON': {'display': 'Common Farming Exp Boost',  # not in bazaar (Zog)
+                                                    'prices': {'custom': 60000}},
+            'PET_ITEM_FARMING_SKILL_BOOST_UNCOMMON': {'display': 'Uncommon Farming Exp Boost',  # not in bazaar (AH)
+                                                      'prices': {'custom': 50000}},  # 2025-8-31
+            'PET_ITEM_FARMING_SKILL_BOOST_RARE': {'display': 'Rare Farming Exp Boost',  # not in bazaar (Zog)
+                                                  'prices': {'custom': 500000}},
+            'PET_ITEM_FARMING_SKILL_BOOST_EPIC': {'display': 'Epic Farming Exp Boost',  # not in bazaar (Duncan)
+                                                  'prices': {'custom': 1500000}},
+            'PET_ITEM_FISHING_SKILL_BOOST_COMMON': {'display': 'Common Fishing Exp Boost',  # not in bazaar (Zog)
+                                                    'prices': {'custom': 60000}},
+            'PET_ITEM_FISHING_SKILL_BOOST_UNCOMMON': {'display': 'Uncommon Fishing Exp Boost',  # not in bazaar (AH)
+                                                      'prices': {'custom': 40000}},  # 2025-8-31
+            'PET_ITEM_FISHING_SKILL_BOOST_RARE': {'display': 'Rare Fishing Exp Boost',  # not in bazaar (AH)
+                                                  'prices': {'custom': 400000}},  # 2025-8-31
+            'PET_ITEM_FISHING_SKILL_BOOST_EPIC': {'display': 'Epic Fishing Exp Boost',  # not in bazaar (AH)
+                                                  'prices': {'custom': 2500000}},  # 2025-8-31
+            'PET_ITEM_COMBAT_SKILL_BOOST_COMMON': {'display': 'Common Combat Exp Boost',  # not in bazaar (Zog)
+                                                   'prices': {'custom': 60000}},
+            'PET_ITEM_COMBAT_SKILL_BOOST_UNCOMMON': {'display': 'Uncommon Combat Exp Boost',  # not in bazaar (AH)
+                                                     'prices': {'custom': 500000}},  # 2025-8-31
+            'PET_ITEM_COMBAT_SKILL_BOOST_RARE': {'display': 'Rare Combat Exp Boost',  # not in bazaar (AH)
+                                                 'prices': {'custom': 2200000}},  # 2025-8-31
+            'PET_ITEM_COMBAT_SKILL_BOOST_EPIC': {'display': 'Epic Combat Exp Boost',  # not in bazaar (AH)
+                                                 'prices': {'custom': 9500000}},  # 2025-8-31
+            'PET_ITEM_FORAGING_SKILL_BOOST_COMMON': {'display': 'Common Foraging Exp Boost',  # not in bazaar (Zog)
+                                                     'prices': {'custom': 60000}},
+            'PET_ITEM_FORAGING_SKILL_BOOST_EPIC': {'display': 'Epic Foraging Exp Boost',  # not in bazaar (AH)
+                                                   'prices': {'custom': 8500000}},  # 2025-8-31
+            'PET_ITEM_ALL_SKILLS_BOOST_COMMON': {'display': 'All Skills Exp Boost',  # not in bazaar (Zog)
+                                                 'prices': {'custom': 50000}},
+            'ALL_SKILLS_SUPER_BOOST': {'display': 'All Skills Exp Super-Boost',  # not in bazaar (AH)
+                                       'prices': {'custom': 5000000}},  # 2025-8-31
+            "PET_ITEM_EXP_SHARE_DROP": {"display": "Exp Share Core",
+                                        "prices": {}},
+            "SHARD_TOUCAN": {"display": "Toucan",
+                             "prices": {}},
+            "SHARD_FALCON": {"display": "Falcon",
+                             "prices": {}},
+            # The following items are on the Auction House, but can be created from items from the bazaar
+            # If the custom price of an item here is set to 0, the equivalent price from bazaar will be calculated
+            # Otherwise it will use the inputted number.
+            "POSTCARD": {'display': "Postcard",
+                         'prices': {"custom": 7000000}},  # not in bazaar (AH)
+            # equivalent bazaar price: Postcard price = 2 * Free Will price.
+            "PET_ITEM_EXP_SHARE": {'display': "Exp Share",
+                                   'prices': {"custom": 0}},
+            # equivalent bazaar price: Exp Share price = Exp Share Core price + 72 * Enchanted Gold price
             }
 
 #%% Inferno minion List
@@ -937,7 +1026,32 @@ getID = {'Hypergolic Gabagool': 'HYPERGOLIC_GABAGOOL',
          'Birch Wood': 'LOG:2',
          'Dark Oak Wood': 'LOG_2:1',
          'Acacia Wood': 'LOG_2',
-         'Jungle Wood': 'LOG:3'}
+         'Jungle Wood': 'LOG:3',
+         'Small': "SMALL_ENCHANTED_CHEST",
+         'Medium': "MEDIUM_ENCHANTED_CHEST",
+         'Large': "LARGE_ENCHANTED_CHEST",
+         'X-Large': "XLARGE_ENCHANTED_CHEST",
+         'XX-Large': "XXLARGE_ENCHANTED_CHEST",
+         'Common Mining Exp Boost': 'PET_ITEM_MINING_SKILL_BOOST_COMMON',
+         'Uncommon Mining Exp Boost': 'PET_ITEM_MINING_SKILL_BOOST_UNCOMMON',
+         'Rare Mining Exp Boost': 'PET_ITEM_MINING_SKILL_BOOST_RARE',
+         'Common Farming Exp Boost': 'PET_ITEM_FARMING_SKILL_BOOST_COMMON',
+         'Uncommon Farming Exp Boost': 'PET_ITEM_FARMING_SKILL_BOOST_UNCOMMON',
+         'Rare Farming Exp Boost': 'PET_ITEM_FARMING_SKILL_BOOST_RARE',
+         'Epic Farming Exp Boost': 'PET_ITEM_FARMING_SKILL_BOOST_EPIC',
+         'Common Fishing Exp Boost': 'PET_ITEM_FISHING_SKILL_BOOST_COMMON',
+         'Uncommon Fishing Exp Boost': 'PET_ITEM_FISHING_SKILL_BOOST_UNCOMMON',
+         'Rare Fishing Exp Boost': 'PET_ITEM_FISHING_SKILL_BOOST_RARE',
+         'Epic Fishing Exp Boost': 'PET_ITEM_FISHING_SKILL_BOOST_EPIC',
+         'Common Combat Exp Boost': 'PET_ITEM_COMBAT_SKILL_BOOST_COMMON',
+         'Uncommon Combat Exp Boost': 'PET_ITEM_COMBAT_SKILL_BOOST_UNCOMMON',
+         'Rare Combat Exp Boost': 'PET_ITEM_COMBAT_SKILL_BOOST_RARE',
+         'Epic Combat Exp Boost': 'PET_ITEM_COMBAT_SKILL_BOOST_EPIC',
+         'Common Foraging Exp Boost': 'PET_ITEM_FORAGING_SKILL_BOOST_COMMON',
+         'Epic Foraging Exp Boost': 'PET_ITEM_FORAGING_SKILL_BOOST_EPIC',
+         'All Skills Exp Boost': 'PET_ITEM_ALL_SKILLS_BOOST_COMMON',
+         'All Skills Exp Super-Boost': 'ALL_SKILLS_SUPER_BOOST',
+         }
 
 fuel_options = {"None": "NONE",
                 "Coal": "COAL",
@@ -975,173 +1089,180 @@ upgrade_options = {"None": "NONE",
                    "Berberis Fuel Injector": "BERBERIS_FUEL_INJECTOR",
                    "Enchanted Shears": "ENCHANTED_SHEARS",
                    "Sleepy Hollow": "SLEEPY_HOLLOW",
+                   "Hunter Knife": "HUNTER_KNIFE"
                    }
 
 #%% Compactor List
 
-compactorList = {'CUSTOM': {'COMPACTED_CUSTOM': 8, 'amount': 2},
-                 'GLOWSTONE_DUST': {'GLOWSTONE': 4},
-                 'CLAY_BALL': {'CLAY': 4},
-                 'CLAY_BRICK': {'BRICK': 4},
-                 'ICE': {'PACKED_ICE': 9},
-                 'SNOW_BALL': {'SNOW_BLOCK': 4},
-                 'COAL': {'COAL_BLOCK': 9},
-                 'IRON_INGOT': {'IRON_BLOCK': 9},
-                 'GOLD_INGOT': {'GOLD_BLOCK': 9},
-                 'DIAMOND': {'DIAMOND_BLOCK': 9},
-                 'INK_SACK:4': {'LAPIS_BLOCK': 9},
-                 'REDSTONE': {'REDSTONE_BLOCK': 9},
-                 'EMERALD': {'EMERALD_BLOCK': 9},
-                 'QUARTZ': {'QUARTZ_BLOCK': 4},
-                 'WHEAT': {'HAY_BLOCK': 9},
-                 'MELON': {'MELON_BLOCK': 9},
-                 'RED_MUSHROOM': {'HUGE_MUSHROOM_2': 9},
-                 'BROWN_MUSHROOM': {'HUGE_MUSHROOM_1': 9},
-                 'SLIME_BALL': {'SLIME_BLOCK': 9}}
+
+compactorList = {'CUSTOM': {'makes': 'COMPACTED_CUSTOM', 'amount': 2, 'per': 8},
+                 'GLOWSTONE_DUST': {'makes': 'GLOWSTONE', 'per': 4},
+                 'CLAY_BALL': {'makes': 'CLAY', 'per': 4},
+                 'CLAY_BRICK': {'makes': 'BRICK', 'per': 4},
+                 'ICE': {'makes': 'PACKED_ICE', 'per': 9},
+                 'SNOW_BALL': {'makes': 'SNOW_BLOCK', 'per': 4},
+                 'COAL': {'makes': 'COAL_BLOCK', 'per': 9},
+                 'IRON_INGOT': {'makes': 'IRON_BLOCK', 'per': 9},
+                 'GOLD_INGOT': {'makes': 'GOLD_BLOCK', 'per': 9},
+                 'DIAMOND': {'makes': 'DIAMOND_BLOCK', 'per': 9},
+                 'INK_SACK:4': {'makes': 'LAPIS_BLOCK', 'per': 9},
+                 'REDSTONE': {'makes': 'REDSTONE_BLOCK', 'per': 9},
+                 'EMERALD': {'makes': 'EMERALD_BLOCK', 'per': 9},
+                 'QUARTZ': {'makes': 'QUARTZ_BLOCK', 'per': 4},
+                 # 'WHEAT': {'makes': 'HAY_BLOCK', 'per': 9},  # does not produce it anymore
+                 'MELON': {'makes': 'MELON_BLOCK', 'per': 9},
+                 'RED_MUSHROOM': {'makes': 'HUGE_MUSHROOM_2', 'per': 9},
+                 'BROWN_MUSHROOM': {'makes': 'HUGE_MUSHROOM_1', 'per': 9},
+                 'SLIME_BALL': {'makes': 'SLIME_BLOCK', 'per': 9}}
 
 #%% Enchanter List (Super Compactor 3000 and Dwarven Super Compactor)
 
-enchanterList = {'CUSTOM': {'ENCHANTED_CUSTOM': 160, 'amount': 1},
-                 'COMPACTED_CUSTOM': {'ENCHANTED_CUSTOM': 160, 'amount': 4},
-                 'LUSH_BERBERIS': {'ENCHANTED_LUSH_BERBERIS': 160},
-                 'RAW_SOULFLOW': {'SOULFLOW': 160},
-                 'SULPHUR_ORE': {'ENCHANTED_SULPHUR': 160},
-                 'ENCHANTED_SULPHUR': {'ENCHANTED_SULPHUR_CUBE': 160},
-                 'COBBLESTONE': {'ENCHANTED_COBBLESTONE': 160},
-                 'OBSIDIAN': {'ENCHANTED_OBSIDIAN': 160},
-                 'GLOWSTONE_DUST': {'ENCHANTED_GLOWSTONE_DUST': 160},
-                 'GLOWSTONE': {'ENCHANTED_GLOWSTONE_DUST': 40},
-                 'ENCHANTED_GLOWSTONE_DUST': {'ENCHANTED_GLOWSTONE': 160},
-                 'FLINT': {'ENCHANTED_FLINT': 160},
-                 'SAND': {'ENCHANTED_SAND': 160},
-                 'SAND:1': {'ENCHANTED_RED_SAND': 160},
-                 'ENCHANTED_RED_SAND': {'ENCHANTED_RED_SAND_CUBE': 160},
-                 'MYCEL': {'ENCHANTED_MYCELIUM': 160},
-                 'ENCHANTED_MYCELIUM': {'ENCHANTED_MYCELIUM_CUBE': 160},
-                 'CLAY_BALL': {'ENCHANTED_CLAY_BALL': 160},
-                 'CLAY': {'ENCHANTED_CLAY_BALL': 160, 'amount': 4},
-                 'ICE': {'ENCHANTED_ICE': 160},
-                 'PACKED_ICE': {'ENCHANTED_ICE': 160, 'amount': 9},
-                 'ENCHANTED_ICE': {'ENCHANTED_PACKED_ICE': 160},
-                 'SNOW_BALL': {'ENCHANTED_SNOW_BLOCK': 640},
-                 'SNOW_BLOCK': {'ENCHANTED_SNOW_BLOCK': 160},
-                 'COAL': {'ENCHANTED_COAL': 160},
-                 'COAL_BLOCK': {'ENCHANTED_COAL': 160, 'amount': 9},
-                 'ENCHANTED_COAL': {'ENCHANTED_COAL_BLOCK': 160},
-                 'IRON_INGOT': {'ENCHANTED_IRON': 160},
-                 'IRON_BLOCK': {'ENCHANTED_IRON': 160, 'amount': 9},
-                 'ENCHANTED_IRON': {'ENCHANTED_IRON_BLOCK': 160},
-                 'GOLD_INGOT': {'ENCHANTED_GOLD': 160},
-                 'GOLD_BLOCK': {'ENCHANTED_GOLD': 160, 'amount': 9},
-                 'ENCHANTED_GOLD': {'ENCHANTED_GOLD_BLOCK': 160},
-                 'DIAMOND': {'ENCHANTED_DIAMOND': 160},
-                 'DIAMOND_BLOCK': {'ENCHANTED_DIAMOND': 160, 'amount': 9},
-                 'ENCHANTED_DIAMOND': {'ENCHANTED_DIAMOND_BLOCK': 160},
-                 'INK_SACK:4': {'ENCHANTED_LAPIS_LAZULI': 160},
-                 'LAPIS_BLOCK': {'ENCHANTED_LAPIS_LAZULI': 160, 'amount': 9},
-                 'ENCHANTED_LAPIS_LAZULI': {'ENCHANTED_LAPIS_LAZULI_BLOCK': 160},
-                 'REDSTONE': {'ENCHANTED_REDSTONE': 160},
-                 'REDSTONE_BLOCK': {'ENCHANTED_REDSTONE': 160, 'amount': 9},
-                 'ENCHANTED_REDSTONE': {'ENCHANTED_REDSTONE_BLOCK': 160},
-                 'EMERALD': {'ENCHANTED_EMERALD': 160},
-                 'EMERALD_BLOCK': {'ENCHANTED_EMERALD': 160, 'amount': 9},
-                 'ENCHANTED_EMERALD': {'ENCHANTED_EMERALD_BLOCK': 160},
-                 'QUARTZ': {'ENCHANTED_QUARTZ': 160},
-                 'QUARTZ_BLOCK': {'ENCHANTED_QUARTZ': 160, 'amount': 4},
-                 'ENCHANTED_QUARTZ': {'ENCHANTED_QUARTZ_BLOCK': 160},
-                 'ENDER_STONE': {'ENCHANTED_ENDSTONE': 160},
-                 'MITHRIL_ORE': {'ENCHANTED_MITHRIL': 160},
-                 'HARD_STONE': {'ENCHANTED_HARD_STONE': 576},
-                 'ENCHANTED_HARD_STONE': {'CONCENTRATED_STONE': 576},
-                 'WHEAT': {'ENCHANTED_BREAD': 60},
-                 'HAY_BLOCK': {'ENCHANTED_HAY_BLOCK': 144},
-                 'ENCHANTED_HAY_BLOCK': {'TIGHTLY_TIED_HAY_BALE': 144},
-                 'SEEDS': {'ENCHANTED_SEEDS': 160},
-                 'ENCHANTED_SEEDS': {'BOX_OF_SEEDS': 160},
-                 'MELON': {'ENCHANTED_MELON': 160},
-                 'MELON_BLOCK': {'ENCHANTED_MELON': 160, 'amount': 9},
-                 'ENCHANTED_MELON': {'ENCHANTED_MELON_BLOCK': 160},
-                 'PUMPKIN': {'ENCHANTED_PUMPKIN': 160},
-                 'ENCHANTED_PUMPKIN': {'POLISHED_PUMPKIN': 160},
-                 'CARROT_ITEM': {'ENCHANTED_CARROT': 160},
-                 'POTATO_ITEM': {'ENCHANTED_POTATO': 160},
-                 'ENCHANTED_POTATO': {'ENCHANTED_BAKED_POTATO': 160},
-                 'RED_MUSHROOM': {'ENCHANTED_RED_MUSHROOM': 160},
-                 'BROWN_MUSHROOM': {'ENCHANTED_BROWN_MUSHROOM': 160},
-                 'HUGE_MUSHROOM_2': {'ENCHANTED_RED_MUSHROOM': 160, 'amount': 9},
-                 'HUGE_MUSHROOM_1': {'ENCHANTED_BROWN_MUSHROOM': 160, 'amount': 9},
-                 'ENCHANTED_RED_MUSHROOM': {'ENCHANTED_HUGE_MUSHROOM_2': 32},
-                 'ENCHANTED_BROWN_MUSHROOM': {'ENCHANTED_HUGE_MUSHROOM_1': 32},
-                 'INK_SACK:2': {'ENCHANTED_CACTUS_GREEN': 160},
-                 'ENCHANTED_CACTUS_GREEN': {'ENCHANTED_CACTUS': 160},
-                 'INK_SACK:3': {'ENCHANTED_COCOA': 160},
-                 'SUGAR_CANE': {'ENCHANTED_SUGAR': 160},
-                 'ENCHANTED_SUGAR': {'ENCHANTED_SUGAR_CANE': 160},
-                 'NETHER_STALK': {'ENCHANTED_NETHER_STALK': 160},
-                 'ENCHANTED_NETHER_STALK': {'MUTANT_NETHER_STALK': 160},
-                 'YELLOW_FLOWER': {'ENCHANTED_DANDELION': 160},
-                 'RED_ROSE': {'ENCHANTED_POPPY': 576},
-                 'RAW_FISH': {'ENCHANTED_RAW_FISH': 160},
-                 'RAW_FISH:1': {'ENCHANTED_RAW_SALMON': 160},
-                 'RAW_FISH:3': {'ENCHANTED_PUFFERFISH': 160},
-                 'RAW_FISH:2': {'ENCHANTED_CLOWNFISH': 160},
-                 'PRISMARINE_CRYSTALS': {'ENCHANTED_PRISMARINE_CRYSTALS': 80},
-                 'PRISMARINE_SHARD': {'ENCHANTED_PRISMARINE_SHARD': 80},
-                 'SPONGE': {'ENCHANTED_SPONGE': 40},
-                 'ENCHANTED_RAW_FISH': {'ENCHANTED_COOKED_FISH': 160},
-                 'ENCHANTED_RAW_SALMON': {'ENCHANTED_COOKED_SALMON': 160},
-                 'ENCHANTED_SPONGE': {'ENCHANTED_WET_SPONGE': 40},
-                 'ROTTEN_FLESH': {'ENCHANTED_ROTTEN_FLESH': 160},
-                 'POISONOUS_POTATO': {'ENCHANTED_POISONOUS_POTATO': 160},
-                 'ENCHANTED_ENDER_PEARL': {'ABSOLUTE_ENDER_PEARL': 80},
-                 'CRUDE_GABAGOOL': {'VERY_CRUDE_GABAGOOL': 192},  # test in game if super compactor works on them
-                 'CHILI_PEPPER': {'STUFFED_CHILI_PEPPER': 160},  # test in game if super compactor works on them
-                 'HEMOVIBE': {'HEMOGLASS': 160},
-                 # 'HEMOGLASS': {'HEMOBOMB': 15},  # it does not work
-                 'BONE': {'ENCHANTED_BONE': 160},
-                 'SULPHUR': {'ENCHANTED_GUNPOWDER': 160},
-                 'STRING': {'ENCHANTED_STRING': 160},
-                 'SPIDER_EYE': {'ENCHANTED_SPIDER_EYE': 160},
-                 'BLAZE_ROD': {'ENCHANTED_BLAZE_POWDER': 160},
-                 'ENCHANTED_BLAZE_POWDER': {'ENCHANTED_BLAZE_ROD': 160},
-                 'MAGMA_CREAM': {'ENCHANTED_MAGMA_CREAM': 160},
-                 'ENCHANTED_MAGMA_CREAM': {'WHIPPED_MAGMA_CREAM': 160},
-                 'ENDER_PEARL': {'ENCHANTED_ENDER_PEARL': 20},
-                 'GHAST_TEAR': {'ENCHANTED_GHAST_TEAR': 5},
-                 'SLIME_BALL': {'ENCHANTED_SLIME_BALL': 160},
-                 'SLIME_BLOCK': {'ENCHANTED_SLIME_BALL': 160, 'amount': 9},
-                 'ENCHANTED_SLIME_BALL': {'ENCHANTED_SLIME_BLOCK': 160},
-                 'RAW_BEEF': {'ENCHANTED_RAW_BEEF': 160},
-                 'LEATHER': {'ENCHANTED_LEATHER': 576},
-                 'PORK': {'ENCHANTED_PORK': 160},
-                 'ENCHANTED_PORK': {'ENCHANTED_GRILLED_PORK': 160},
-                 'RAW_CHICKEN': {'ENCHANTED_RAW_CHICKEN': 160},
-                 'FEATHER': {'ENCHANTED_FEATHER': 160},
-                 'EGG': {'ENCHANTED_EGG': 144},
-                 'ENCHANTED_EGG': {'SUPER_EGG': 144},
-                 'SUPER_EGG': {'OMEGA_EGG': 9},  # correct
-                 'WOOL': {'ENCHANTED_WOOL': 160},
-                 'MUTTON': {'ENCHANTED_MUTTON': 160},
-                 'ENCHANTED_MUTTON': {'ENCHANTED_COOKED_MUTTON': 160},
-                 'RABBIT': {'ENCHANTED_RABBIT': 160},
-                 'RABBIT_FOOT': {'ENCHANTED_RABBIT_FOOT': 160},
-                 'RABBIT_HIDE': {'ENCHANTED_RABBIT_HIDE': 576},
-                 'LOG': {'ENCHANTED_OAK_LOG': 160},
-                 'LOG:1': {'ENCHANTED_SPRUCE_LOG': 160},
-                 'LOG:2': {'ENCHANTED_BIRCH_LOG': 160},
-                 'LOG_2:1': {'ENCHANTED_DARK_OAK_LOG': 160},
-                 'LOG_2': {'ENCHANTED_ACACIA_LOG': 160},
-                 'LOG:3': {'ENCHANTED_JUNGLE_LOG': 160}}
+
+enchanterList = {'CUSTOM': {'makes': 'ENCHANTED_CUSTOM', 'amount': 1, 'per': 160},
+                 'COMPACTED_CUSTOM': {'makes': 'ENCHANTED_CUSTOM', 'amount': 4, 'per': 160},
+                 'LUSH_BERBERIS': {'makes': 'ENCHANTED_LUSH_BERBERIS', 'per': 160},
+                 'RAW_SOULFLOW': {'makes': 'SOULFLOW', 'per': 160},
+                 'SULPHUR_ORE': {'makes': 'ENCHANTED_SULPHUR', 'per': 160},
+                 'ENCHANTED_SULPHUR': {'makes': 'ENCHANTED_SULPHUR_CUBE', 'per': 160},
+                 'COBBLESTONE': {'makes': 'ENCHANTED_COBBLESTONE', 'per': 160},
+                 'OBSIDIAN': {'makes': 'ENCHANTED_OBSIDIAN', 'per': 160},
+                 'GLOWSTONE_DUST': {'makes': 'ENCHANTED_GLOWSTONE_DUST', 'per': 160},
+                 'GLOWSTONE': {'makes': 'ENCHANTED_GLOWSTONE_DUST', 'per': 40},
+                 'ENCHANTED_GLOWSTONE_DUST': {'makes': 'ENCHANTED_GLOWSTONE', 'per': 160},
+                 'FLINT': {'makes': 'ENCHANTED_FLINT', 'per': 160},
+                 'SAND': {'makes': 'ENCHANTED_SAND', 'per': 160},
+                 'SAND:1': {'makes': 'ENCHANTED_RED_SAND', 'per': 160},
+                 'ENCHANTED_RED_SAND': {'makes': 'ENCHANTED_RED_SAND_CUBE', 'per': 160},
+                 'MYCEL': {'makes': 'ENCHANTED_MYCELIUM', 'per': 160},
+                 'ENCHANTED_MYCELIUM': {'makes': 'ENCHANTED_MYCELIUM_CUBE', 'per': 160},
+                 'CLAY_BALL': {'makes': 'ENCHANTED_CLAY_BALL', 'per': 160},
+                 'ENCHANTED_CLAY_BALL': {'makes': 'ENCHANTED_CLAY_BLOCK', 'per': 160},
+                 'CLAY': {'makes': 'ENCHANTED_CLAY_BALL', 'amount': 4, 'per': 160},
+                 'ICE': {'makes': 'ENCHANTED_ICE', 'per': 160},
+                 'PACKED_ICE': {'makes': 'ENCHANTED_ICE', 'amount': 9, 'per': 160},
+                 'ENCHANTED_ICE': {'makes': 'ENCHANTED_PACKED_ICE', 'per': 160},
+                 'SNOW_BALL': {'makes': 'ENCHANTED_SNOW_BLOCK', 'per': 640},
+                 'SNOW_BLOCK': {'makes': 'ENCHANTED_SNOW_BLOCK', 'per': 160},
+                 'COAL': {'makes': 'ENCHANTED_COAL', 'per': 160},
+                 'COAL_BLOCK': {'makes': 'ENCHANTED_COAL', 'amount': 9, 'per': 160},
+                 'ENCHANTED_COAL': {'makes': 'ENCHANTED_COAL_BLOCK', 'per': 160},
+                 'IRON_INGOT': {'makes': 'ENCHANTED_IRON', 'per': 160},
+                 'IRON_BLOCK': {'makes': 'ENCHANTED_IRON', 'amount': 9, 'per': 160},
+                 'ENCHANTED_IRON': {'makes': 'ENCHANTED_IRON_BLOCK', 'per': 160},
+                 'GOLD_INGOT': {'makes': 'ENCHANTED_GOLD', 'per': 160},
+                 'GOLD_BLOCK': {'makes': 'ENCHANTED_GOLD', 'amount': 9, 'per': 160},
+                 'ENCHANTED_GOLD': {'makes': 'ENCHANTED_GOLD_BLOCK', 'per': 160},
+                 'DIAMOND': {'makes': 'ENCHANTED_DIAMOND', 'per': 160},
+                 'DIAMOND_BLOCK': {'makes': 'ENCHANTED_DIAMOND', 'amount': 9, 'per': 160},
+                 'ENCHANTED_DIAMOND': {'makes': 'ENCHANTED_DIAMOND_BLOCK', 'per': 160},
+                 'INK_SACK:4': {'makes': 'ENCHANTED_LAPIS_LAZULI', 'per': 160},
+                 'LAPIS_BLOCK': {'makes': 'ENCHANTED_LAPIS_LAZULI', 'amount': 9, 'per': 160},
+                 'ENCHANTED_LAPIS_LAZULI': {'makes': 'ENCHANTED_LAPIS_LAZULI_BLOCK', 'per': 160},
+                 'REDSTONE': {'makes': 'ENCHANTED_REDSTONE', 'per': 160},
+                 'REDSTONE_BLOCK': {'makes': 'ENCHANTED_REDSTONE', 'amount': 9, 'per': 160},
+                 'ENCHANTED_REDSTONE': {'makes': 'ENCHANTED_REDSTONE_BLOCK', 'per': 160},
+                 'EMERALD': {'makes': 'ENCHANTED_EMERALD', 'per': 160},
+                 'EMERALD_BLOCK': {'makes': 'ENCHANTED_EMERALD', 'amount': 9, 'per': 160},
+                 'ENCHANTED_EMERALD': {'makes': 'ENCHANTED_EMERALD_BLOCK', 'per': 160},
+                 'QUARTZ': {'makes': 'ENCHANTED_QUARTZ', 'per': 160},
+                 'QUARTZ_BLOCK': {'makes': 'ENCHANTED_QUARTZ', 'amount': 4, 'per': 160},
+                 'ENCHANTED_QUARTZ': {'makes': 'ENCHANTED_QUARTZ_BLOCK', 'per': 160},
+                 'ENDER_STONE': {'makes': 'ENCHANTED_ENDSTONE', 'per': 160},
+                 'MITHRIL_ORE': {'makes': 'ENCHANTED_MITHRIL', 'per': 160},
+                 'HARD_STONE': {'makes': 'ENCHANTED_HARD_STONE', 'per': 576},
+                 'ENCHANTED_HARD_STONE': {'makes': 'CONCENTRATED_STONE', 'per': 576},
+                 'WHEAT': {'makes': 'ENCHANTED_WHEAT', 'per': 160},
+                 # 'WHEAT': {'makes': 'ENCHANTED_BREAD', 'per': 60},  # does not produce it anymore
+                 'ENCHANTED_WHEAT': {'makes': 'ENCHANTED_HAY_BALE', 'per': 160},
+                 'SEEDS': {'makes': 'ENCHANTED_SEEDS', 'per': 160},
+                 'ENCHANTED_SEEDS': {'makes': 'BOX_OF_SEEDS', 'per': 160},
+                 'MELON': {'makes': 'ENCHANTED_MELON', 'per': 160},
+                 'MELON_BLOCK': {'makes': 'ENCHANTED_MELON', 'amount': 9, 'per': 160},
+                 'ENCHANTED_MELON': {'makes': 'ENCHANTED_MELON_BLOCK', 'per': 160},
+                 'PUMPKIN': {'makes': 'ENCHANTED_PUMPKIN', 'per': 160},
+                 'ENCHANTED_PUMPKIN': {'makes': 'POLISHED_PUMPKIN', 'per': 160},
+                 'CARROT_ITEM': {'makes': 'ENCHANTED_CARROT', 'per': 160},
+                 'POTATO_ITEM': {'makes': 'ENCHANTED_POTATO', 'per': 160},
+                 'ENCHANTED_POTATO': {'makes': 'ENCHANTED_BAKED_POTATO', 'per': 160},
+                 'RED_MUSHROOM': {'makes': 'ENCHANTED_RED_MUSHROOM', 'per': 160},
+                 'BROWN_MUSHROOM': {'makes': 'ENCHANTED_BROWN_MUSHROOM', 'per': 160},
+                 'HUGE_MUSHROOM_2': {'makes': 'ENCHANTED_RED_MUSHROOM', 'amount': 9, 'per': 160},
+                 'HUGE_MUSHROOM_1': {'makes': 'ENCHANTED_BROWN_MUSHROOM', 'amount': 9, 'per': 160},
+                 'ENCHANTED_RED_MUSHROOM': {'makes': 'ENCHANTED_HUGE_MUSHROOM_2', 'per': 32},
+                 'ENCHANTED_BROWN_MUSHROOM': {'makes': 'ENCHANTED_HUGE_MUSHROOM_1', 'per': 32},
+                 'INK_SACK:2': {'makes': 'ENCHANTED_CACTUS_GREEN', 'per': 160},
+                 'ENCHANTED_CACTUS_GREEN': {'makes': 'ENCHANTED_CACTUS', 'per': 160},
+                 'INK_SACK:3': {'makes': 'ENCHANTED_COCOA', 'per': 160},
+                 'SUGAR_CANE': {'makes': 'ENCHANTED_SUGAR', 'per': 160},
+                 'ENCHANTED_SUGAR': {'makes': 'ENCHANTED_SUGAR_CANE', 'per': 160},
+                 'NETHER_STALK': {'makes': 'ENCHANTED_NETHER_STALK', 'per': 160},
+                 'ENCHANTED_NETHER_STALK': {'makes': 'MUTANT_NETHER_STALK', 'per': 160},
+                 'YELLOW_FLOWER': {'makes': 'ENCHANTED_DANDELION', 'per': 160},
+                 'RED_ROSE': {'makes': 'ENCHANTED_POPPY', 'per': 576},
+                 'RAW_FISH': {'makes': 'ENCHANTED_RAW_FISH', 'per': 160},
+                 'RAW_FISH:1': {'makes': 'ENCHANTED_RAW_SALMON', 'per': 160},
+                 'RAW_FISH:3': {'makes': 'ENCHANTED_PUFFERFISH', 'per': 160},
+                 'RAW_FISH:2': {'makes': 'ENCHANTED_CLOWNFISH', 'per': 160},
+                 'PRISMARINE_CRYSTALS': {'makes': 'ENCHANTED_PRISMARINE_CRYSTALS', 'per': 80},
+                 'PRISMARINE_SHARD': {'makes': 'ENCHANTED_PRISMARINE_SHARD', 'per': 80},
+                 'SPONGE': {'makes': 'ENCHANTED_SPONGE', 'per': 40},
+                 'ENCHANTED_RAW_FISH': {'makes': 'ENCHANTED_COOKED_FISH', 'per': 160},
+                 'ENCHANTED_RAW_SALMON': {'makes': 'ENCHANTED_COOKED_SALMON', 'per': 160},
+                 'ENCHANTED_SPONGE': {'makes': 'ENCHANTED_WET_SPONGE', 'per': 40},
+                 'ROTTEN_FLESH': {'makes': 'ENCHANTED_ROTTEN_FLESH', 'per': 160},
+                 'POISONOUS_POTATO': {'makes': 'ENCHANTED_POISONOUS_POTATO', 'per': 160},
+                 'ENCHANTED_ENDER_PEARL': {'makes': 'ABSOLUTE_ENDER_PEARL', 'per': 80},
+                 'CRUDE_GABAGOOL': {'makes': 'VERY_CRUDE_GABAGOOL', 'per': 192},  # correct
+                 # 'CHILI_PEPPER': {'makes': 'STUFFED_CHILI_PEPPER', 'per': 160},  # does not compact
+                 'HEMOVIBE': {'makes': 'HEMOGLASS', 'per': 160},
+                 # 'HEMOGLASS': {'makes': 'HEMOBOMB', 'per': 15},  # does not compact
+                 'BONE': {'makes': 'ENCHANTED_BONE', 'per': 160},
+                 'SULPHUR': {'makes': 'ENCHANTED_GUNPOWDER', 'per': 160},
+                 'STRING': {'makes': 'ENCHANTED_STRING', 'per': 160},
+                 'SPIDER_EYE': {'makes': 'ENCHANTED_SPIDER_EYE', 'per': 160},
+                 'BLAZE_ROD': {'makes': 'ENCHANTED_BLAZE_POWDER', 'per': 160},
+                 'ENCHANTED_BLAZE_POWDER': {'makes': 'ENCHANTED_BLAZE_ROD', 'per': 160},
+                 'MAGMA_CREAM': {'makes': 'ENCHANTED_MAGMA_CREAM', 'per': 160},
+                 'ENCHANTED_MAGMA_CREAM': {'makes': 'WHIPPED_MAGMA_CREAM', 'per': 160},
+                 'ENDER_PEARL': {'makes': 'ENCHANTED_ENDER_PEARL', 'per': 20},
+                 'GHAST_TEAR': {'makes': 'ENCHANTED_GHAST_TEAR', 'per': 5},
+                 'SLIME_BALL': {'makes': 'ENCHANTED_SLIME_BALL', 'per': 160},
+                 'SLIME_BLOCK': {'makes': 'ENCHANTED_SLIME_BALL', 'amount': 9, 'per': 160},
+                 'ENCHANTED_SLIME_BALL': {'makes': 'ENCHANTED_SLIME_BLOCK', 'per': 160},
+                 'RAW_BEEF': {'makes': 'ENCHANTED_RAW_BEEF', 'per': 160},
+                 'LEATHER': {'makes': 'ENCHANTED_LEATHER', 'per': 160},
+                 'PORK': {'makes': 'ENCHANTED_PORK', 'per': 160},
+                 'ENCHANTED_PORK': {'makes': 'ENCHANTED_GRILLED_PORK', 'per': 160},
+                 'RAW_CHICKEN': {'makes': 'ENCHANTED_RAW_CHICKEN', 'per': 160},
+                 'FEATHER': {'makes': 'ENCHANTED_FEATHER', 'per': 160},
+                 'EGG': {'makes': 'ENCHANTED_EGG', 'per': 144},
+                 'ENCHANTED_EGG': {'makes': 'SUPER_EGG', 'per': 144},
+                 'SUPER_EGG': {'makes': 'OMEGA_EGG', 'per': 9},  # correct
+                 'WOOL': {'makes': 'ENCHANTED_WOOL', 'per': 160},
+                 'MUTTON': {'makes': 'ENCHANTED_MUTTON', 'per': 160},
+                 'ENCHANTED_MUTTON': {'makes': 'ENCHANTED_COOKED_MUTTON', 'per': 160},
+                 'RABBIT': {'makes': 'ENCHANTED_RABBIT', 'per': 160},
+                 'ENCHANTED_RABBIT': {'makes': 'ENCHANTED_COOKED_RABBIT', 'per': 160},
+                 'RABBIT_FOOT': {'makes': 'ENCHANTED_RABBIT_FOOT', 'per': 160},
+                 'RABBIT_HIDE': {'makes': 'ENCHANTED_RABBIT_HIDE', 'per': 160},
+                 'LOG': {'makes': 'ENCHANTED_OAK_LOG', 'per': 160},
+                 'LOG:1': {'makes': 'ENCHANTED_SPRUCE_LOG', 'per': 160},
+                 'LOG:2': {'makes': 'ENCHANTED_BIRCH_LOG', 'per': 160},
+                 'LOG_2:1': {'makes': 'ENCHANTED_DARK_OAK_LOG', 'per': 160},
+                 'LOG_2': {'makes': 'ENCHANTED_ACACIA_LOG', 'per': 160},
+                 'LOG:3': {'makes': 'ENCHANTED_JUNGLE_LOG', 'per': 160}}
+
 
 #%% pet xp boost items
 
 pet_xp_boosts = {"None": ["all", 0],
                  'Common Mining Exp Boost': ['mining', 20],
+                 'Uncommon Mining Exp Boost': ['mining', 30],
                  'Rare Mining Exp Boost': ['mining', 40],
                  'Common Farming Exp Boost': ['farming', 20],
                  'Uncommon Farming Exp Boost': ['farming', 30],
                  'Rare Farming Exp Boost': ['farming', 40],
-                 'Epic Farming Exp Boost': ['farming', 40],
+                 'Epic Farming Exp Boost': ['farming', 50],
                  'Common Fishing Exp Boost': ['fishing', 20],
                  'Uncommon Fishing Exp Boost': ['fishing', 30],
                  'Rare Fishing Exp Boost': ['fishing', 40],
@@ -1152,24 +1273,156 @@ pet_xp_boosts = {"None": ["all", 0],
                  'Epic Combat Exp Boost': ['combat', 50],
                  'Common Foraging Exp Boost': ['foraging', 20],
                  'Epic Foraging Exp Boost': ['foraging', 50],
-                 'Common All Skills Exp Boost': ['all', 10],
-                 'Common All Skills Exp Super-Boost': ['all', 20],
+                 'All Skills Exp Boost': ['all', 10],
+                 'All Skills Exp Super-Boost': ['all', 20],
                  }
 
 #%% Floating Crystals
 
 floating_crystals = {"None": {0: []},
-                     "Farm Crystal": {10: ['Wheat', 'Melon', 'Pumpkin', 'Carrot', 'Potato', 'Cactus', 'Cocoa Beans', 'Sugar Cane', 'Nether Wart']},
-                     "Woodcutting Crystal": {10: ['Oak', 'Spruce', 'Birch', 'Dark Oak', 'Acacia', 'Jungle']},
+                     "Farm Crystal": {10: ['Wheat', 'Melon', 'Pumpkin', 'Carrot', 'Potato', 'Cactus', 'Cocoa Beans', 'Sugar Cane', 'Mushroom', 'Nether Wart']},
+                     "Woodcutting Crystal": {10: ['Oak', 'Spruce', 'Birch', 'Dark Oak', 'Acacia', 'Jungle', "Flower"]},  # flower minion is correct
                      "Mithril Crystal": {10: ['Cobblestone', 'Obsidian', 'Glowstone', 'Gravel', 'Sand', 'Red Sand', 'Mycelium', 'Ice', 'Snow', 'Coal', 'Iron', 'Gold', 'Diamond', 'Lapis', 'Redstone', 'Emerald', 'Quartz', 'End Stone', 'Mithril', 'Hard Stone']},
-                     "Winter Crystal": {5: ["Snow"]},
-                     "Winter + Mithril Crystal": {15: ["Snow"]}}  # correct
+                     "Winter Crystal": {5: ["Snow", "Ice"]},
+                     "Winter + Mithril Crystal": {15: ["Snow", "Ice"]}}  # correct
 
 #%% Minion Storage
 
 minion_chests = {"None": 0, "Small": 3, "Medium": 9, "Large": 15, "X-Large": 21, "XX-Large": 27}
 
 standard_storage = {1: 1, 2: 3, 3: 3, 4: 6, 5: 6, 6: 9, 7: 9, 8: 12, 9: 12, 10: 15, 11: 15, 12: 15}
+
+
+#%% Hoppers
+
+hopper_data = {
+    "None": 1,
+    "Budget Hopper": 0.5,
+    "Enchanted Hopper": 0.9,
+}
+
+#%% Minion boosting pets
+
+# name pet: {valid rarities: [boost base, added boost per level], "affects": [affected minions]}
+boost_pets = {
+    "None": {"affects": []},
+    # "Chicken": {"Legendary": [0, 0.3], "affects": ["Chicken"]},  # reworked in skyblock 0.23.1
+    "Magma Cube": {"Common": [0, 0.2], "Uncommon": [0, 0.25],
+                   "Rare": [0, 0.25], "Epic": [0, 0.3],
+                   "Legendary": [0, 0.3], "affects": ["Slime", "Magma Cube"]},  # affects magma cube minion is correct
+    "Mooshroom Cow": {"Common": [0, 0.2], "Uncommon": [0, 0.2],
+                      "Rare": [0, 0.3], "Epic": [0, 0.3],
+                      "Legendary": [0, 0.3], "affects": ["Mushroom", "Mycelium"]},
+    "Ocelot": {"Rare": [0, 0.3], "Epic": [0, 0.3], "Legendary": [0, 0.3],
+               "affects": ['Oak', 'Spruce', 'Birch', 'Dark Oak', 'Acacia', 'Jungle', "Flower"]},  # yes flower minion correct
+    "Pigman": {"Common": [0, 0.1], "Uncommon": [0, 0.2],
+               "Rare": [0, 0.2], "Epic": [0, 0.3],
+               "Legendary": [0, 0.3], "affects": ["Pig"]},
+    "Rabbit": {"Legendary": [0, 0.3], "Mythic": [0, 0.3],
+               "affects": ['Wheat', 'Melon', 'Pumpkin', 'Carrot', 'Potato', 'Cactus', 'Cocoa Beans', 'Sugar Cane', 'Mushroom', 'Nether Wart']},
+    "Snail": {"Common": [0, 0.1], "Uncommon": [0, 0.2],
+               "Rare": [0, 0.2], "Epic": [0, 0.3],
+               "Legendary": [0, 0.3], "affects": ["Red Sand"]},
+    "Spider": {"Legendary": [0, 0.3], "Mythic": [0, 0.3],
+               "affects": ["Spider", "Tarantula", "Cave Spider"]}
+    }
+
+
+#%% Attribute shards
+
+attribute_shards = {"Common": {1: 1, 2: 4, 3: 9, 4: 15, 5: 22, 6: 30, 7: 40, 8: 54, 9: 72, 10: 96},
+                    "Uncommon": {1: 1, 2: 3, 3: 6, 4: 10, 5: 15, 6: 21, 7: 28, 8: 36, 9: 48, 10: 64},
+                    "Rare": {1: 1, 2: 3, 3: 6, 4: 9, 5: 13, 6: 17, 7: 22, 8: 28, 9: 36, 10: 48},
+                    "Epic": {1: 1, 2: 2, 3: 4, 4: 6, 5: 9, 6: 12, 7: 16, 8: 20, 9: 25, 10: 32},
+                    "Legendary": {1: 1, 2: 2, 3: 3, 4: 5, 5: 7, 6: 9, 7: 12, 8: 15, 9: 19, 10: 24}
+                    }
+
+
+#%% Pets
+
+all_pets = {
+    "None": {'type': 'all', 'rarity': 'Legendary'},
+    "Custom Pet": {'type': 'farming', 'rarity': 'Legendary'},
+    'Ammonite': {'type': 'fishing', 'rarity': 'Legendary'},
+    'Ankylosaurus': {'type': 'combat', 'rarity': 'Legendary'},
+    'Armadillo': {'type': 'mining', 'rarity': 'Legendary'},
+    'Baby Yeti': {'type': 'fishing', 'rarity': 'Legendary'},
+    'Bal': {'type': 'mining', 'rarity': 'Legendary'},
+    'Bat': {'type': 'mining', 'rarity': 'Legendary'},
+    'Bee': {'type': 'farming', 'rarity': 'Legendary'},
+    "Bingo": {'type': 'all', 'rarity': 'Common'},
+    'Black Cat': {'type': 'combat', 'rarity': 'Legendary'},
+    'Blaze': {'type': 'combat', 'rarity': 'Legendary'},
+    'Blue Whale': {'type': 'fishing', 'rarity': 'Legendary'},
+    'Chicken': {'type': 'farming', 'rarity': 'Legendary'},
+    'Dolphin': {'type': 'fishing', 'rarity': 'Legendary'},
+    'Eerie': {'type': 'combat', 'rarity': 'Legendary'},
+    'Elephant': {'type': 'farming', 'rarity': 'Legendary'},
+    'Ender Dragon': {'type': 'combat', 'rarity': 'Legendary'},
+    'Enderman': {'type': 'combat', 'rarity': 'Legendary'},
+    'Endermite': {'type': 'mining', 'rarity': 'Legendary'},
+    'Flying Fish': {'type': 'fishing', 'rarity': 'Legendary'},
+    'Frog': {'type': 'foraging', 'rarity': 'Legendary'},
+    'Ghoul': {'type': 'combat', 'rarity': 'Legendary'},
+    'Giraffe': {'type': 'foraging', 'rarity': 'Legendary'},
+    'Glacite Golem': {'type': 'mining', 'rarity': 'Legendary'},
+    'Goblin': {'type': 'mining', 'rarity': 'Legendary'},
+    'Golden Dragon': {'type': 'combat', 'rarity': 'Legendary'},
+    'Golem': {'type': 'combat', 'rarity': 'Legendary'},
+    'Grandma Wolf': {'type': 'combat', 'rarity': 'Legendary'},
+    'Griffin': {'type': 'combat', 'rarity': 'Legendary'},
+    'Guardian': {'type': 'enchanting', 'rarity': 'Legendary'},
+    'Hedgehog': {'type': 'farming', 'rarity': 'Legendary'},
+    'Hermit Crab': {'type': 'fishing', 'rarity': 'Legendary'},
+    'Horse': {'type': 'combat', 'rarity': 'Legendary'},
+    'Hound': {'type': 'combat', 'rarity': 'Legendary'},
+    'Jerry': {'type': 'combat', 'rarity': 'Legendary'},
+    'Jade Dragon': {'type': 'foraging', 'rarity': 'Legendary'},
+    'Jellyfish': {'type': 'alchemy', 'rarity': 'Legendary'},
+    'Kuudra': {'type': 'combat', 'rarity': 'Legendary'},
+    'Lion': {'type': 'foraging', 'rarity': 'Legendary'},
+    'Magma Cube': {'type': 'combat', 'rarity': 'Legendary'},
+    'Mammoth': {'type': 'combat', 'rarity': 'Legendary'},
+    'Megalodon': {'type': 'fishing', 'rarity': 'Legendary'},
+    'Mithril Golem': {'type': 'mining', 'rarity': 'Legendary'},
+    'Mole': {'type': 'mining', 'rarity': 'Legendary'},
+    'Monkey': {'type': 'foraging', 'rarity': 'Legendary'},
+    'Mooshroom Cow': {'type': 'farming', 'rarity': 'Legendary'},
+    'Mosquito': {'type': 'farming', 'rarity': 'Legendary'},
+    'Ocelot': {'type': 'foraging', 'rarity': 'Legendary'},
+    'Owl': {'type': 'taming', 'rarity': 'Legendary'},
+    'Parrot': {'type': 'alchemy', 'rarity': 'Legendary'},
+    'Penguin': {'type': 'fishing', 'rarity': 'Legendary'},
+    'Phoenix': {'type': 'combat', 'rarity': 'Legendary'},
+    'Pig': {'type': 'farming', 'rarity': 'Legendary'},
+    'Pigman': {'type': 'combat', 'rarity': 'Legendary'},
+    'Rabbit': {'type': 'farming', 'rarity': 'Legendary'},
+    'Rat': {'type': 'combat', 'rarity': 'Legendary'},
+    'Reindeer': {'type': 'fishing', 'rarity': 'Legendary'},
+    'Rift Ferret': {'type': 'combat', 'rarity': 'Epic'},
+    'Rock': {'type': 'mining', 'rarity': 'Legendary'},
+    'Scatha': {'type': 'mining', 'rarity': 'Legendary'},
+    'Sheep': {'type': 'alchemy', 'rarity': 'Legendary'},
+    'Silverfish': {'type': 'mining', 'rarity': 'Legendary'},
+    'Skeleton': {'type': 'combat', 'rarity': 'Legendary'},
+    'Skeleton Horse': {'type': 'combat', 'rarity': 'Legendary'},
+    'Slug': {'type': 'farming', 'rarity': 'Legendary'},
+    'Snail': {'type': 'mining', 'rarity': 'Legendary'},
+    'Snowman': {'type': 'combat', 'rarity': 'Legendary'},
+    'Spider': {'type': 'combat', 'rarity': 'Legendary'},
+    'Spinosaurus': {'type': 'fishing', 'rarity': 'Legendary'},
+    'Spirit': {'type': 'combat', 'rarity': 'Legendary'},
+    'Squid': {'type': 'fishing', 'rarity': 'Legendary'},
+    'T-Rex': {'type': 'combat', 'rarity': 'Legendary'},
+    'Tarantula': {'type': 'combat', 'rarity': 'Legendary'},
+    'Tiger': {'type': 'combat', 'rarity': 'Legendary'},
+    'Turtle': {'type': 'combat', 'rarity': 'Legendary'},
+    'Wither Skeleton': {'type': 'mining', 'rarity': 'Legendary'},
+    'Wolf': {'type': 'combat', 'rarity': 'Legendary'},
+    'Zombie': {'type': 'combat', 'rarity': 'Legendary'}
+    }
+
+max_lvl_pet_xp_amounts = {"Common": 5624785, "Uncommon": 8644220, "Rare": 12626665, "Epic": 18608500, "Legendary": 25353230}
 
 #%% Minion List:
 # average drop amount from hypixel skyblock fandom wiki or self tested
@@ -1180,6 +1433,16 @@ minionList = {
             "CUSTOM": 1
         },
         "speed": {
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5,
+            6: 6,
+            7: 7,
+            8: 8,
+            9: 9,
+            10: 10,
             11: 11,
             12: 12
         },
@@ -1187,153 +1450,167 @@ minionList = {
         "notes": {"Custom": "Custom Minion does not exist", "AFK": "multiple corrupt drops"}
     },
     "Cobblestone": {"drops": {"COBBLESTONE": 1},
-                    "speed": {11: 7, 12: 6},
-                    "notes": {"Special setup": "only harvests (cobble generator)"}},
+                    "speed": {1: 14, 2: 14, 3: 12, 4: 12, 5: 10, 6: 10, 7: 9, 8: 9, 9: 8, 10: 8, 11: 7, 12: 6},
+                    "notes": {"Special Layout": "only harvests (cobble generator)"}},
     "Obsidian": {"drops": {"OBSIDIAN": 1},
-                 "speed": {11: 24, 12: 21}},
+                 "speed": {1: 45, 2: 45, 3: 42, 4: 42, 5: 39, 6: 39, 7: 35, 8: 35, 9: 30, 10: 30, 11: 24, 12: 21}},
     "Glowstone": {"drops": {"GLOWSTONE_DUST": 3},
-                  "speed": {7: 19, 8: 19, 9: 16, 10: 16, 11: 13, 12: 11}},
+                  "speed": {1: 25, 2: 25, 3: 23, 4: 23, 5: 21, 6: 21, 7: 19, 8: 19, 9: 16, 10: 16, 11: 13, 12: 11}},
     "Gravel": {"drops": {"GRAVEL": 1},
-               "speed": {11: 13},
+               "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 19, 8: 19, 9: 16, 10: 16, 11: 13},
                "storage": {1: 2, 2: 4, 3: 4},
-               "notes": {"Special setup": "only spawn (gravity blocks)"}},
+               "notes": {"Special Layout": "only spawn (gravity blocks)"}},
     "Sand": {"drops": {"SAND": 1},
-             "speed": {11: 13},
-             "notes": {"Special setup": "only spawn (gravity blocks)"}},
+             "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 19, 8: 19, 9: 16, 10: 16, 11: 13},
+             "notes": {"Special Layout": "only spawn (gravity blocks)"}},
     "Red Sand": {"drops": {"SAND:1": 1},
                  "speed": {1: 26, 2: 25, 3: 24, 4: 23, 5: 22, 6: 21, 7: 20, 8: 19, 9: 18, 10: 16, 11: 13, 12: 11},
                  "storage": {1: 1, 2: 2, 3: 3, 4: 5, 5: 6, 6: 8, 7: 9, 8: 11, 9: 12, 10: 14, 11: 15, 12: 15},
-                 "notes": {"Special setup": "only spawn (gravity blocks)"}},
+                 "notes": {"Special Layout": "only spawn (gravity blocks)"}},
     "Mycelium": {"drops": {"MYCEL": 1},
                  "speed": {1: 26, 2: 25, 3: 24, 4: 23, 5: 22, 6: 21, 7: 20, 8: 19, 9: 18, 10: 16, 11: 13, 12: 11},
                  "storage": {1: 1, 2: 2, 3: 3, 4: 5, 5: 6, 6: 8, 7: 9, 8: 11, 9: 12, 10: 14, 11: 15, 12: 15},
-                 "notes": {"Special setup": "only harvests (natural spreading)"}},
+                 "notes": {"Special Layout": "only harvests (natural spreading)"}},
     "Clay": {"drops": {"CLAY_BALL": 4},
-             "speed": {10: 20, 11: 16}},
+             "speed": {1: 32, 2: 32, 3: 30, 4: 30, 5: 27.5, 6: 27.5, 7: 24, 8: 24, 9: 20, 10: 20, 11: 16, 12: 14}},
     "Ice": {"drops": {"ICE": 1},
-            "speed": {9: 8, 10: 8, 11: 7, 12: 6},
-            "notes": {"Special setup": "only harvests (frozen biome)"}},
+            "speed": {1: 14, 2: 14, 3: 12, 4: 12, 5: 10, 6: 10, 7: 9, 8: 9, 9: 8, 10: 8, 11: 7, 12: 6},
+            "notes": {"Special Layout": "only harvests (frozen biome)"}},
     "Snow": {"drops": {"SNOW_BALL": 4},
-             "speed": {11: 6.5, 12: 5.8}},
+             "speed": {1: 13, 2: 13, 3: 12, 4: 12, 5: 11, 6: 11, 7: 9.5, 8: 9.5, 9: 8, 10: 8, 11: 6.5, 12: 5.8}},
     "Coal": {"drops": {"COAL": 1},
-             "speed": {1: 15, 11: 7, 12: 6}},
+             "speed": {1: 15, 2: 15, 3: 13, 4: 13, 5: 12, 6: 12, 7: 10, 8: 10, 9: 9, 10: 9, 11: 7, 12: 6}},
     "Iron": {"drops": {"IRON_ORE": 1},
-             "speed": {7: 12, 8: 12, 9: 10, 10: 10, 11: 8, 12: 7}},
+             "speed": {1: 17, 2: 17, 3: 15, 4: 15, 5: 14, 6: 14, 7: 12, 8: 12, 9: 10, 10: 10, 11: 8, 12: 7}},
     "Gold": {"drops": {"GOLD_ORE": 1},
-             "speed": {11: 11, 12: 9}},
+             "speed": {1: 22, 2: 22, 3: 20, 4: 20, 5: 18, 6: 18, 7: 16, 8: 16, 9: 14, 10: 14, 11: 11, 12: 9}},
     "Diamond": {"drops": {"DIAMOND": 1},
-                "speed": {11: 15, 12: 12}},
-    "Lapis": {"drops": {"INK_SACK:4": 6},
-              "speed": {11: 18, 12: 16}},
+                "speed": {1: 29, 2: 29, 3: 27, 4: 27, 5: 25, 6: 25, 7: 22, 8: 22, 9: 19, 10: 19, 11: 15, 12: 12}},
+    "Lapis": {"drops": {"INK_SACK:4": 6},  # correct
+              "speed": {1: 29, 2: 29, 3: 27, 4: 27, 5: 25, 6: 25, 7: 23, 8: 23, 9: 21, 10: 21, 11: 18, 12: 16}},
     "Redstone": {"drops": {"REDSTONE": 4.5},
-                 "speed": {11: 18, 12: 16}},
+                 "speed": {1: 29, 2: 29, 3: 27, 4: 27, 5: 25, 6: 25, 7: 23, 8: 23, 9: 21, 10: 21, 11: 18, 12: 16}},
     "Emerald": {"drops": {"EMERALD": 1},
-                "speed": {11: 14, 12: 12}},
+                "speed": {1: 28, 2: 28, 3: 26, 4: 26, 5: 24, 6: 24, 7: 21, 8: 21, 9: 18, 10: 18, 11: 14, 12: 12}},
     "Quartz": {"drops": {"QUARTZ": 1},
-               "speed": {11: 11.5, 12: 10}},
+               "speed": {1: 22.5, 2: 22.5, 3: 21, 4: 21, 5: 19, 6: 19, 7: 17, 8: 17, 9: 14.5, 10: 14.5, 11: 11.5, 12: 10}},
     "End Stone": {"drops": {"ENDER_STONE": 1},
-                  "speed": {11: 13}},
+                  "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 19, 8: 19, 9: 16, 10: 16, 11: 13}},
     "Mithril": {"drops": {"MITHRIL_ORE": 2},
-                "speed": {11: 55, 12: 50}},
+                "speed": {1: 80, 2: 80, 3: 75, 4: 75, 5: 70, 6: 70, 7: 65, 8: 65, 9: 60, 10: 60, 11: 55, 12: 50}},
     "Hard Stone": {"drops": {"HARD_STONE": 1},
-                   "speed": {5: 10, 6: 10, 7: 9, 8: 9, 9: 8, 10: 8, 11: 7, 12: 6}},
-    "Wheat": {"drops": {"WHEAT": 1, "SEEDS": 1.5},
-              "speed": {11: 8, 12: 7}},
+                   "speed": {1: 14, 2: 14, 3: 12, 4: 12, 5: 10, 6: 10, 7: 9, 8: 9, 9: 8, 10: 8, 11: 7, 12: 6}},
+    "Wheat": {"drops": {"WHEAT": 1, "SEEDS": 1.5},  # correct
+              "speed": {1: 15, 2: 15, 3: 13, 4: 13, 5: 11, 6: 11, 7: 10, 8: 10, 9: 9, 10: 9, 11: 8, 12: 7},
+              "storage": {1: 2, 2: 4, 3: 4},
+              "notes": {"AFK": "can skip planting with Wheat Crystal (not 100% of the time, depends on minion speed)"}},
     "Melon": {"drops": {"MELON": 5},
-              "speed": {11: 13, 12: 10},
+              "speed": {1: 24, 2: 24, 3: 22.5, 4: 22.5, 5: 21, 6: 21, 7: 18.5, 8: 18.5, 9: 16, 10: 16, 11: 13, 12: 10},
               "notes": {"AFK": "only harvests"}},
     "Pumpkin": {"drops": {"PUMPKIN": 1},
-                "speed": {11: 16, 12: 12},
+                "speed": {1: 32, 2: 32, 3: 30, 4: 30, 5: 27, 6: 27, 7: 24, 8: 24, 9: 20, 10: 20, 11: 16, 12: 12},
                 "notes": {"AFK": "only harvests"}},
     "Carrot": {"drops": {"CARROT_ITEM": 3},
-               "speed": {11: 10, 12: 8}},
+               "speed": {1: 20, 2: 20, 3: 18, 4: 18, 5: 16, 6: 16, 7: 14, 8: 14, 9: 12, 10: 12, 11: 10, 12: 8}},
     "Potato": {"drops": {"POTATO_ITEM": 3},
-               "speed": {11: 10, 12: 8}},
+               "speed": {1: 20, 2: 20, 3: 18, 4: 18, 5: 16, 6: 16, 7: 14, 8: 14, 9: 12, 10: 12, 11: 10, 12: 8}},
     "Mushroom": {"drops": {"RED_MUSHROOM": 0.5, "BROWN_MUSHROOM": 0.5},
-                 "speed": {11: 16, 12: 12},
-                 "notes": {"Bug": "does not get boost from farming crystal"}},
+                 "speed": {1: 30, 2: 30, 3: 28, 4: 28, 5: 26, 6: 26, 7: 23, 8: 23, 9: 20, 10: 20, 11: 16, 12: 12},
+                 "storage": {1: 2, 2: 4, 3: 4}},
     "Cactus": {"drops": {"CACTUS": 3},
-               "speed": {11: 15, 12: 12}},
+               "speed": {1: 27, 2: 27, 3: 25, 4: 25, 5: 23, 6: 23, 7: 21, 8: 21, 9: 18, 10: 18, 11: 15, 12: 12}},
     "Cocoa Beans": {"drops": {"INK_SACK:3": 3},
                     "speed": {1: 27, 2: 27, 3: 25, 4: 25, 5: 23, 6: 23, 7: 21, 8: 21, 9: 18, 10: 18, 11: 15, 12: 12}},
     "Sugar Cane": {"drops": {"SUGAR_CANE": 3},
-                   "speed": {11: 12, 12: 9}},
+                   "speed": {1: 22, 2: 22, 3: 20, 4: 20, 5: 18, 6: 18, 7: 16, 8: 16, 9: 14.5, 10: 14.5, 11: 12, 12: 9}},
     "Nether Wart": {"drops": {"NETHER_STALK": 3},
-                    "speed": {11: 32, 12: 27}},
+                    "speed": {1: 50, 2: 50, 3: 47, 4: 47, 5: 44, 6: 44, 7: 41, 8: 41, 9: 38, 10: 38, 11: 32, 12: 27}},
     "Flower": {"drops": {"YELLOW_FLOWER": 1 / 14, "RED_ROSE": 1 / 14, "SMALL_FLOWER": 8 / 14, "LARGE_FLOWER": 4 / 14},
                "speed": {1: 30, 2: 29, 3: 28, 4: 27, 5: 26, 6: 25, 7: 24, 8: 23, 9: 22, 10: 20, 11: 18, 12: 15},
                "storage": {1: 15, 2: 15, 3: 15, 4: 15, 5: 15, 6: 15, 7: 15, 8: 15, 9: 15, 10: 15, 11: 15, 12: 15},
-               "notes": {"Special setup": "only spawn, no large flowers (water flushing, low roof)"}},
+               "notes": {"Special Layout": "only spawn, no large flowers (water flushing, low roof)"}},
     "Fishing": {"drops": {"RAW_FISH": 0.5, "RAW_FISH:1": 0.25, "RAW_FISH:3": 0.12, "RAW_FISH:2": 0.04, "PRISMARINE_CRYSTALS": 0.03, "PRISMARINE_SHARD": 0.03, "SPONGE": 0.03},
-                "speed": {1: 78, 2: 75, 3: 72, 4: 72, 5: 68, 6: 68, 7: 62.5, 8: 62.5, 9: 53, 10: 53, 11: 35},
+                "speed": {1: 75, 2: 75, 3: 67, 4: 67, 5: 59, 6: 59, 7: 51, 8: 51, 9: 43, 10: 43, 11: 35, 12: 30},
                 "storage": {1: 10, 2: 10, 3: 10, 4: 11, 5: 11, 6: 12, 7: 12, 8: 13, 9: 13, 10: 14, 11: 15},
                 "notes": {"Always": "only harvests"}},
-    "Zombie": {"drops": {"ROTTEN_FLESH": 1, "CARROT_ITEM": 0.01, "POTATO_ITEM": 0.01, "POISONOUS_POTATO": 0.02},  # check poisonous potato drop rate
-               "speed": {11: 13}},
+    "Zombie": {"drops": {"ROTTEN_FLESH": 1, "CARROT_ITEM": 0.01, "POTATO_ITEM": 0.01, "POISONOUS_POTATO": 0.02},  # correct
+               "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 20, 8: 20, 9: 17, 10: 17, 11: 13}},
     "Revenant": {"drops": {"ROTTEN_FLESH": 3.16, "DIAMOND": 0.2},
                  "speed": {1: 29, 2: 29, 3: 26, 4: 26, 5: 23, 6: 23, 7: 19, 8: 19, 9: 14.5, 10: 14.5, 11: 10, 12: 8},
                  "afkcorrupt": 1.83,
                  "notes": {"AFK": "multiple corrupt drops"}},
-    "Voidling": {"drops": {"OBSIDIAN": 2.5, "QUARTZ": 0.4, "ENCHANTED_ENDER_PEARL": 0.000625, "DYE_BYZANTIUM": 0.00000005},
+    "Voidling": {"drops": {"OBSIDIAN": 2.5, "QUARTZ": 0.4, "ENCHANTED_ENDER_PEARL": 0.000625},
                  "speed": {1: 45, 2: 45, 3: 42, 4: 42, 5: 39, 6: 39, 7: 35, 8: 35, 9: 30, 10: 30, 11: 24},
                  "afkcorrupt": 1.5,
                  "notes": {"AFK": "multiple corrupt drops"}},
-    "Inferno": {"drops": {"CRUDE_GABAGOOL": 1, "DYE_FLAME": 0.000001},
+    "Inferno": {"drops": {"CRUDE_GABAGOOL": 1},
                 "speed": {1: 1013, 2: 982, 3: 950, 4: 919, 5: 886, 6: 855, 7: 823, 8: 792, 9: 760, 10: 728, 11: 697},
-                "notes": {"Inferno": "can use inferno fuel"}},
+                "afkcorrupt": 0,
+                "notes": {"Inferno": "can use inferno fuel", "AFK": "no corrupt drops"}},
     "Vampire": {"drops": {"HEMOVIBE": 1},
                 "speed": {1: 190, 2: 190, 3: 175, 4: 175, 5: 160, 6: 160, 7: 140, 8: 140, 9: 117, 10: 117, 11: 95}},
-    "Skeleton": {"drops": {"BONE": 1.5},
-                 "speed": {11: 13},
+    "Skeleton": {"drops": {"BONE": 1.5},  # correct
+                 "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 20, 8: 20, 9: 17, 10: 17, 11: 13},
                  "afkcorrupt": 1.5,
                  "notes": {"AFK": "multiple corrupt drops"}},
     "Creeper": {"drops": {"SULPHUR": 1},
-                "speed": {9: 18, 10: 18, 11: 14}},
+                "speed": {1: 27, 2: 27, 3: 25, 4: 25, 5: 23, 6: 23, 7: 21, 8: 21, 9: 18, 10: 18, 11: 14}},
     "Spider": {"drops": {"STRING": 1, "SPIDER_EYE": 0.5},
-               "speed": {9: 17, 10: 17, 11: 13}},
+               "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 20, 8: 20, 9: 17, 10: 17, 11: 13},
+               "storage": {1: 2, 2: 4, 3: 4}},
     "Tarantula": {"drops": {"STRING": 3.16, "SPIDER_EYE": 1, "IRON_INGOT": 0.2},
-                  "speed": {1: 29, 2: 29, 3: 26, 4: 26, 5: 23, 6: 23, 7: 19, 8: 19, 9: 14.5, 10: 14.5, 11: 10},
+                  "speed": {1: 29, 2: 29, 3: 26, 4: 26, 5: 23, 6: 23, 7: 19, 8: 19, 9: 14.5, 10: 14.5, 11: 10, 12: 8},
                   "afkcorrupt": 1.83,
                   "notes": {"AFK": "multiple corrupt drops"}},
     "Cave Spider": {"drops": {"STRING": 0.5, "SPIDER_EYE": 1},
-                    "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 20, 8: 20, 9: 17, 10: 17, 11: 13}},
-    "Blaze": {"drops": {"BLAZE_ROD": 1, "DYE_FLAME": 0.000001},
-              "speed": {9: 21, 10: 21, 11: 16.5, 12: 15}},
+                    "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 20, 8: 20, 9: 17, 10: 17, 11: 13},
+                    "storage": {1: 2, 2: 4, 3: 4}},
+    "Blaze": {"drops": {"BLAZE_ROD": 1},
+              "speed": {1: 33, 2: 33, 3: 31, 4: 31, 5: 28.5, 6: 28.5, 7: 25, 8: 25, 9: 21, 10: 21, 11: 16.5, 12: 15}},
     "Magma Cube": {"drops": {"MAGMA_CREAM": 2},
-                   "speed": {9: 22, 10: 22, 11: 18, 12: 16},
+                   "speed": {1: 32, 2: 32, 3: 30, 4: 30, 5: 28, 6: 28, 7: 25, 8: 25, 9: 22, 10: 22, 11: 18, 12: 16},
                    "afkcorrupt": 2,
                    "notes": {"AFK": "multiple corrupt drops"}},
     "Enderman": {"drops": {"ENDER_PEARL": 1},
-                 "speed": {9: 22, 10: 22, 11: 18}},
+                 "speed": {1: 32, 2: 32, 3: 30, 4: 30, 5: 28, 6: 28, 7: 25, 8: 25, 9: 22, 10: 22, 11: 18}},
     "Ghast": {"drops": {"GHAST_TEAR": 1},
-              "speed": {9: 38, 10: 38, 11: 32, 12: 30}},
+              "speed": {1: 50, 2: 50, 3: 47, 4: 47, 5: 44, 6: 44, 7: 41, 8: 41, 9: 38, 10: 38, 11: 32, 12: 30}},
     "Slime": {"drops": {"SLIME_BALL": 2},
-              "speed": {11: 12},
+              "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 19, 8: 19, 9: 16, 10: 16, 11: 12},
               "afkcorrupt": 2,
               "notes": {"AFK": "multiple corrupt drops"}},
     "Cow": {"drops": {"RAW_BEEF": 1, "LEATHER": 1},
-            "speed": {9: 17, 10: 17, 11: 13, 12: 10}},
+            "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 20, 8: 20, 9: 17, 10: 17, 11: 13, 12: 10},
+            "storage": {1: 2, 2: 4, 3: 4}},
     "Pig": {"drops": {"PORK": 1},
-            "speed": {9: 17, 10: 17, 11: 13, 12: 10}},
+            "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 20, 8: 20, 9: 17, 10: 17, 11: 13, 12: 10}},
     "Chicken": {"drops": {"RAW_CHICKEN": 1, "FEATHER": 1},
-                "speed": {9: 18, 10: 18, 11: 15, 12: 12}},
+                "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 20, 8: 20, 9: 18, 10: 18, 11: 15, 12: 12},
+                "storage": {1: 3, 2: 5, 3: 5, 4: 7, 5: 7}},
     "Sheep": {"drops": {"MUTTON": 1, "WOOL": 1},
-              "speed": {7: 18, 8: 18, 9: 16, 10: 16, 11: 12, 12: 9}},
-    "Rabbit": {"drops": {"RABBIT": 1, "RABBIT_FOOT": 0.35, "RABBIT_HIDE": 0.35},
-               "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 20, 8: 20, 9: 17, 10: 17, 11: 13, 12: 10}},
-    "Oak": {"drops": {"LOG": 3}, "speed": {11: 27},
-            "notes": {"Special setup": "only spawn (manual breaking)", "AFK": "+1 wood drop"}},
-    "Spruce": {"drops": {"LOG:1": 3}, "speed": {11: 27},
-               "notes": {"Special setup": "only spawn (manual breaking)", "AFK": "+1 wood drop"}},
-    "Birch": {"drops": {"LOG:2": 3}, "speed": {11: 27},
-              "notes": {"Special setup": "only spawn (manual breaking)", "AFK": "+1 wood drop"}},
-    "Dark Oak": {"drops": {"LOG_2:1": 3}, "speed": {11: 27},
-                 "notes": {"Special setup": "only spawn (manual breaking)", "AFK": "+1 wood drop"}},
-    "Acacia": {"drops": {"LOG_2": 3}, "speed": {11: 27},
-               "notes": {"Special setup": "only spawn (manual breaking)", "AFK": "+1 wood drop"}},
+              "speed": {1: 24, 2: 24, 3: 22, 4: 22, 5: 20, 6: 20, 7: 18, 8: 18, 9: 16, 10: 16, 11: 12, 12: 9},
+              "storage": {1: 2, 2: 4, 3: 4}},
+    "Rabbit": {"drops": {"RABBIT": 1, "RABBIT_FOOT": 0.7, "RABBIT_HIDE": 0.7},  # correct
+               "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 20, 8: 20, 9: 17, 10: 17, 11: 13, 12: 10},
+               "storage": {1: 3, 2: 5, 3: 5, 4: 7, 5: 7}},
+    "Oak": {"drops": {"LOG": 3},
+            "speed": {1: 48, 2: 48, 3: 45, 4: 45, 5: 42, 6: 42, 7: 38, 8: 38, 9: 33, 10: 33, 11: 27},
+            "notes": {"AFK": "+1 wood drop"}},
+    "Spruce": {"drops": {"LOG:1": 3},
+               "speed": {1: 48, 2: 48, 3: 45, 4: 45, 5: 42, 6: 42, 7: 38, 8: 38, 9: 33, 10: 33, 11: 27},
+               "notes": {"AFK": "+1 wood drop"}},
+    "Birch": {"drops": {"LOG:2": 3},
+              "speed": {1: 48, 2: 48, 3: 45, 4: 45, 5: 42, 6: 42, 7: 38, 8: 38, 9: 33, 10: 33, 11: 27},
+              "notes": {"AFK": "+1 wood drop"}},
+    "Dark Oak": {"drops": {"LOG_2:1": 3},
+                 "speed": {1: 48, 2: 48, 3: 45, 4: 45, 5: 42, 6: 42, 7: 38, 8: 38, 9: 33, 10: 33, 11: 27},
+                 "notes": {"AFK": "+1 wood drop"}},
+    "Acacia": {"drops": {"LOG_2": 3},
+               "speed": {1: 48, 2: 48, 3: 45, 4: 45, 5: 42, 6: 42, 7: 38, 8: 38, 9: 33, 10: 33, 11: 27},
+               "notes": {"AFK": "+1 wood drop"}},
     "Jungle": {"drops": {"LOG:3": 3},
-               "notes": {"Special setup": "only spawn (manual breaking)", "AFK": "+1 wood drop"},
-               "speed": {1: 48, 2: 48, 3: 45, 4: 45, 5: 42, 6: 42, 7: 38, 8: 38, 9: 33, 10: 33, 11: 27}}
+               "speed": {1: 48, 2: 48, 3: 45, 4: 45, 5: 42, 6: 42, 7: 38, 8: 38, 9: 33, 10: 33, 11: 27},
+               "notes": {"AFK": "+1 wood drop"}}
 }
 
 #%% Minion Cost Functions
@@ -1398,7 +1675,7 @@ minionCosts = {"Custom": minionCostTypes(["CUSTOM", "ENCHANTED_CUSTOM"], "single
                "Sand": minionCostTypes(["SAND", "ENCHANTED_SAND"], "single enchanted", False),
                "Red Sand": minionCostTypes(["SAND:1", "ENCHANTED_RED_SAND", "ENCHANTED_RED_SAND_CUBE"], "expensive enchanted", True, {1: {'SAND:1': 80}, 4: {'ENCHANTED_RED_SAND': 16}, 5: {'ENCHANTED_RED_SAND': 32}}),
                "Mycelium": minionCostTypes(["MYCEL", "ENCHANTED_MYCELIUM", "ENCHANTED_MYCELIUM_CUBE"], "expensive enchanted", True, {1: {'MYCEL': 80}, 4: {'ENCHANTED_MYCELIUM': 16}, 5: {'ENCHANTED_MYCELIUM': 32}}),
-               "Clay": minionCostTypes(["CLAY_BALL", "ENCHANTED_CLAY_BALL"], "single enchanted", False),
+               "Clay": minionCostTypes(["CLAY_BALL", "ENCHANTED_CLAY_BALL"], "single enchanted", True, {12: {"ENCHANTED_CLAY_BLOCK": 8}}),
                "Ice": {1: {"ICE": 80}, 2: {"ICE": 160}, 3: {"ICE": 320}, 4: {"ICE": 512}, 5: {"PACKED_ICE": 128}, 6: {"PACKED_ICE": 256}, 7: {"PACKED_ICE": 512}, 8: {"ENCHANTED_ICE": 64}, 9: {"ENCHANTED_ICE": 128}, 10: {"ENCHANTED_ICE": 256}, 11: {"ENCHANTED_ICE": 512}, 12: {"ENCHANTED_ICE": 1024}},
                "Snow": {1: {}, 2: {"SNOW_BLOCK": 32}, 3: {"SNOW_BLOCK": 64}, 4: {"SNOW_BLOCK": 128}, 5: {"SNOW_BLOCK": 256}, 6: {"SNOW_BLOCK": 512}, 7: {"ENCHANTED_SNOW_BLOCK": 8}, 8: {"ENCHANTED_SNOW_BLOCK": 16}, 9: {"ENCHANTED_SNOW_BLOCK": 32}, 10: {"ENCHANTED_SNOW_BLOCK": 64}, 11: {"ENCHANTED_SNOW_BLOCK": 128}, 12: {"ENCHANTED_SNOW_BLOCK": 1024}},
                "Coal": minionCostTypes(["COAL", "ENCHANTED_COAL", "ENCHANTED_COAL_BLOCK"], "double enchanted", True),
@@ -1411,8 +1688,8 @@ minionCosts = {"Custom": minionCostTypes(["CUSTOM", "ENCHANTED_CUSTOM"], "single
                "Quartz": minionCostTypes(["QUARTZ", "ENCHANTED_QUARTZ", "ENCHANTED_QUARTZ_BLOCK"], "double enchanted", True),
                "End Stone": minionCostTypes(["ENDER_STONE", "ENCHANTED_ENDSTONE"], "single enchanted", False),
                "Mithril": minionCostTypes(["MITHRIL_ORE", "ENCHANTED_MITHRIL", "REFINED_MITHRIL"], "double enchanted", True),
-               "Hard Stone": minionCostTypes(["HARD_STONE", "ENCHANTED_HARD_STONE", "CONCENTRATED_STONE"], "expensive enchanted", True, {1: {'HARD_STONE': 256}, 2: {'HARD_STONE': 512}, 3: {'ENCHANTED_HARD_STONE': 8}, 4: {'ENCHANTED_HARD_STONE': 16}, 5: {'ENCHANTED_HARD_STONE': 32}}),
-               "Wheat": {1: {"WHEAT": 80}, 2: {"WHEAT": 160}, 3: {"WHEAT": 256}, 4: {"WHEAT": 512}, 5: {"HAY_BLOCK": 96}, 6: {"HAY_BLOCK": 192}, 7: {"HAY_BLOCK": 384}, 8: {"HAY_BLOCK": 512}, 9: {"ENCHANTED_HAY_BLOCK": 8}, 10: {"ENCHANTED_HAY_BLOCK": 16}, 11: {"ENCHANTED_HAY_BLOCK": 32}, 12: {"ENCHANTED_HAY_BLOCK": 64}},
+               "Hard Stone": minionCostTypes(["HARD_STONE", "ENCHANTED_HARD_STONE", "CONCENTRATED_STONE"], "expensive enchanted", True, {1: {'HARD_STONE': 256}, 2: {'HARD_STONE': 512}, 3: {'ENCHANTED_HARD_STONE': 8}, 4: {'ENCHANTED_HARD_STONE': 16}, 5: {'ENCHANTED_HARD_STONE': 32}, 10: {"CONCENTRATED_STONE": 4}, 11: {"CONCENTRATED_STONE": 8}, 12: {"CONCENTRATED_STONE": 16}}),
+               "Wheat": minionCostTypes(["WHEAT", "ENCHANTED_WHEAT"], "single enchanted", True),
                "Melon": {1: {"MELON": 256}, 2: {"MELON": 512}, 3: {"MELON_BLOCK": 128}, 4: {"MELON_BLOCK": 256}, 5: {"MELON_BLOCK": 512}, 6: {"ENCHANTED_MELON": 64}, 7: {"ENCHANTED_MELON": 128}, 8: {"ENCHANTED_MELON": 256}, 9: {"ENCHANTED_MELON": 512}, 10: {"ENCHANTED_MELON_BLOCK": 8}, 11: {"ENCHANTED_MELON_BLOCK": 16}, 12: {"ENCHANTED_MELON_BLOCK": 32}},
                "Pumpkin": minionCostTypes(["PUMPKIN", "ENCHANTED_PUMPKIN"], "single enchanted", True),
                "Carrot": minionCostTypes(["CARROT_ITEM", "ENCHANTED_CARROT", "ENCHANTED_GOLDEN_CARROT"], "expensive enchanted", True),
@@ -1423,7 +1700,7 @@ minionCosts = {"Custom": minionCostTypes(["CUSTOM", "ENCHANTED_CUSTOM"], "single
                "Sugar Cane": minionCostTypes(["SUGAR_CANE", "ENCHANTED_SUGAR", "ENCHANTED_SUGAR_CANE"], "expensive enchanted", True),
                "Nether Wart": minionCostTypes(["NETHER_STALK", "ENCHANTED_NETHER_STALK"], "single enchanted", True),
                "Flower": minionCostTypes(["YELLOW_FLOWER", "ENCHANTED_DANDELION", "ENCHANTED_POPPY"], "double enchanted", True, {1: {}}),
-               "Fishing": {1: {'RAW_FISH': 64}, 2: {'RAW_FISH': 128}, 3: {'RAW_FISH': 256}, 4: {'RAW_FISH': 512}, 5: {'ENCHANTED_RAW_FISH': 8}, 6: {'ENCHANTED_RAW_FISH': 24}, 7: {'ENCHANTED_RAW_FISH': 64}, 8: {'ENCHANTED_RAW_FISH': 128}, 9: {'ENCHANTED_RAW_FISH': 256}, 10: {'ENCHANTED_RAW_FISH': 512}, 11: {'ENCHANTED_COOKED_FISH': 8}},
+               "Fishing": {1: {'RAW_FISH': 64}, 2: {'RAW_FISH': 128}, 3: {'RAW_FISH': 256}, 4: {'RAW_FISH': 512}, 5: {'ENCHANTED_RAW_FISH': 8}, 6: {'ENCHANTED_RAW_FISH': 24}, 7: {'ENCHANTED_RAW_FISH': 64}, 8: {'ENCHANTED_RAW_FISH': 128}, 9: {'ENCHANTED_RAW_FISH': 256}, 10: {'ENCHANTED_RAW_FISH': 512}, 11: {'ENCHANTED_COOKED_FISH': 8}, 12: {'ENCHANTED_COOKED_FISH': 16}},
                "Zombie": minionCostTypes(["ROTTEN_FLESH", "ENCHANTED_ROTTEN_FLESH"], "single enchanted", False),
                "Revenant": {},
                "Voidling": {},
@@ -1437,13 +1714,13 @@ minionCosts = {"Custom": minionCostTypes(["CUSTOM", "ENCHANTED_CUSTOM"], "single
                "Blaze": minionCostTypes(["BLAZE_ROD", "ENCHANTED_BLAZE_POWDER", "ENCHANTED_BLAZE_ROD"], "double enchanted", True),
                "Magma Cube": minionCostTypes(["MAGMA_CREAM", "ENCHANTED_MAGMA_CREAM"], "single enchanted", True),
                "Enderman": {1: {"ENDER_PEARL": 64}, 2: {"ENDER_PEARL": 128}, 3: {"ENCHANTED_ENDER_PEARL": 8}, 4: {"ENCHANTED_ENDER_PEARL": 24}, 5: {"ENCHANTED_ENDER_PEARL": 48}, 6: {"ENCHANTED_ENDER_PEARL": 96}, 7: {"ENCHANTED_EYE_OF_ENDER": 8}, 8: {"ENCHANTED_EYE_OF_ENDER": 24}, 9: {"ENCHANTED_EYE_OF_ENDER": 48}, 10: {"ENCHANTED_EYE_OF_ENDER": 96}, 11: {"ENCHANTED_EYE_OF_ENDER": 192}},
-               "Ghast": {1: {"GHAST_TEAR": 64}, 2: {"GHAST_TEAR": 128}, 3: {"GHAST_TEAR": 256}, 4: {"GHAST_TEAR": 512}, 5: {"ENCHANTED_GHAST_TEAR": 256}, 6: {"ENCHANTED_GHAST_TEAR": 512}, 7: {"ENCHANTED_GHAST_TEAR": 25 * 32}, 8: {"ENCHANTED_GHAST_TEAR": 25 * 64}, 9: {"ENCHANTED_GHAST_TEAR": 25 * 128}, 10: {"ENCHANTED_GHAST_TEAR": 25 * 256}, 11: {"ENCHANTED_GHAST_TEAR": 25 * 512}, 12: {"ENCHANTED_GHAST_TEAR": 25 * 1024}},
+               "Ghast": {1: {"GHAST_TEAR": 64}, 2: {"GHAST_TEAR": 128}, 3: {"GHAST_TEAR": 256}, 4: {"GHAST_TEAR": 512}, 5: {"ENCHANTED_GHAST_TEAR": 256}, 6: {"ENCHANTED_GHAST_TEAR": 512}, 7: {"SILVER_FANG": 32}, 8: {"SILVER_FANG": 64}, 9: {"SILVER_FANG": 128}, 10: {"SILVER_FANG": 256}, 11: {"SILVER_FANG": 512}, 12: {"SILVER_FANG": 1024}},
                "Slime": minionCostTypes(["SLIME_BALL", "ENCHANTED_SLIME_BALL", "ENCHANTED_SLIME_BLOCK"], "double enchanted", False),
-               "Cow": {1: {"RAW_BEEF": 64}, 2: {"RAW_BEEF": 128}, 3: {"RAW_BEEF": 256}, 4: {"RAW_BEEF": 512}, 5: {"ENCHANTED_RAW_BEEF": 8}, 6: {"ENCHANTED_RAW_BEEF": 24}, 7: {"ENCHANTED_RAW_BEEF": 64}, 8: {"ENCHANTED_RAW_BEEF": 128}, 9: {"ENCHANTED_RAW_BEEF": 256}, 10: {"ENCHANTED_RAW_BEEF": 512}, 11: {"ENCHANTED_LEATHER": 256}, 12: {"ENCHANTED_LEATHER": 512}},
+               "Cow": {1: {"RAW_BEEF": 64}, 2: {"RAW_BEEF": 128}, 3: {"RAW_BEEF": 256}, 4: {"RAW_BEEF": 512}, 5: {"ENCHANTED_RAW_BEEF": 8}, 6: {"ENCHANTED_RAW_BEEF": 24}, 7: {"ENCHANTED_RAW_BEEF": 64}, 8: {"ENCHANTED_RAW_BEEF": 128}, 9: {"ENCHANTED_RAW_BEEF": 256}, 10: {"ENCHANTED_RAW_BEEF": 512}, 11: {"ENCHANTED_LEATHER": 512}, 12: {"ENCHANTED_LEATHER": 1028}},  # correct, first launch of 0.23.1 has 1028 instead of the expected 1024
                "Pig": minionCostTypes(["PORK", "ENCHANTED_PORK", "ENCHANTED_GRILLED_PORK"], "double enchanted", True, {1: {"PORK": 64}, 2: {"PORK": 128}, 3: {"PORK": 256}}),
                "Chicken": minionCostTypes(["RAW_CHICKEN", "ENCHANTED_RAW_CHICKEN"], "single enchanted", True, {1: {"RAW_CHICKEN": 64}, 2: {"RAW_CHICKEN": 128}, 3: {"RAW_CHICKEN": 256}}),
                "Sheep": minionCostTypes(["MUTTON", "ENCHANTED_MUTTON", "ENCHANTED_COOKED_MUTTON"], "double enchanted", True, {1: {"MUTTON": 64}, 2: {"MUTTON": 128}, 3: {"MUTTON": 256}}),
-               "Rabbit": {1: {"RABBIT": 64}, 2: {"RABBIT": 128}, 3: {"RABBIT": 256}, 4: {"RABBIT": 512}, 5: {"ENCHANTED_RABBIT_FOOT": 32}, 6: {"ENCHANTED_RABBIT_FOOT": 64}, 7: {"ENCHANTED_RABBIT_FOOT": 128}, 8: {"ENCHANTED_RABBIT_FOOT": 256}, 9: {"ENCHANTED_RABBIT_FOOT": 512}, 10: {"ENCHANTED_RABBIT_HIDE": 256}, 11: {"ENCHANTED_RABBIT_HIDE": 512}, 12: {"ENCHANTED_RABBIT_HIDE": 1024}},
+               "Rabbit": minionCostTypes(["RABBIT", "ENCHANTED_RABBIT", "ENCHANTED_COOKED_RABBIT"], "double enchanted", True, {1: {"RABBIT": 64}, 2: {"RABBIT": 128}, 3: {"RABBIT": 256}}),
                "Oak": minionCostTypes(["LOG", "ENCHANTED_OAK_LOG"], "single enchanted", False),
                "Spruce": minionCostTypes(["LOG:1", "ENCHANTED_SPRUCE_LOG"], "single enchanted", False),
                "Birch": minionCostTypes(["LOG:2", "ENCHANTED_BIRCH_LOG"], "single enchanted", False),
@@ -1474,14 +1751,16 @@ minionCosts["Tarantula"] = {1: {"TARANTULA_WEB": 80, "ENCHANTED_FERMENTED_SPIDER
                             2: {"TARANTULA_WEB": 140, **minionCostSum("Spider", 1)},
                             3: {"TARANTULA_WEB": 280, **minionCostSum("Spider", 2)},
                             4: {"TARANTULA_WEB": 448, **minionCostSum("Spider", 3)},
-                            **{i: {"TARANTULA_SILK": 7 * 2**(i - 5), **minionCostSum("Spider", i - 1)} for i in np.arange(5, 12)}
-                            }
+                            **{i: {"TARANTULA_SILK": 7 * 2**(i - 5), **minionCostSum("Spider", i - 1)} for i in np.arange(5, 12)},
+                            12: {"TARANTULA_SILK": 64}}
 
-extraMinionCosts = {"Cobblestone": {12: {"COINS": 2000000}},
+extraMinionCosts = {"Custom": {6: {"TESTING": 2}, 12: {"COINS": 1, "NON_EXISTENT": 1, "TEST": 2}},
+                    "Cobblestone": {12: {"COINS": 2000000}},
                     "Obsidian": {12: {"COINS": 2000000}},
                     "Glowstone": {12: {"COINS": 2000000}},
                     "Red Sand": {12: {"COINS": 2000000}},
                     "Mycelium": {12: {"COINS": 2000000}},
+                    "Clay": {12: {"COINS": 2000000, "FISHY_TREAT": 256}},
                     "Ice": {12: {"COINS": 1000000, "NORTH_STARS": 300}},
                     "Snow": {12: {"COINS": 2000000, "NORTH_STARS": 500}},
                     "Coal": {12: {"COINS": 2000000}},
@@ -1504,9 +1783,11 @@ extraMinionCosts = {"Cobblestone": {12: {"COINS": 2000000}},
                     "Cocoa Beans": {12: {"PELTS": 75}},
                     "Sugar Cane": {12: {"PELTS": 75}},
                     "Nether Wart": {12: {"PELTS": 75}},
-                    "Flower": {1: {"DARK_AUCTION": 1}},
+                    "Flower": {1: {"T1_FROM_DARK_AUCTION": 1}},
+                    "Fishing": {12: {"COINS": 2000000, "FISHY_TREAT": 256}},
                     "Revenant": {12: {"COINS": 2000000}},
                     "Vampire": {1: {"BAT_PERSON_HELMET": 1}},
+                    "Tarantula": {12: {"COINS": 2000000}},
                     "Blaze": {12: {"COINS": 2000000}},
                     "Magma Cube": {12: {"COINS": 2000000}},
                     "Ghast": {12: {"COINS": 2000000}},
@@ -1525,53 +1806,9 @@ upgrades_material_cost = {"beacon": {1: {"ENCHANTED_MITHRIL": 192, "STARFALL": 6
                                      4: {"REFINED_MITHRIL": 20, "PLASMA": 1},
                                      5: {"REFINED_MITHRIL": 40, "PLASMA": 5}},
                           "crystal": {"Farm Crystal": {"ENCHANTED_PUMPKIN": 96, "ENCHANTED_QUARTZ": 1},
-                                      "Woodcutting Crystal": {"ENCHANTED_BIRCH_LOG": 96, "ENCHANTED_QUARTZ": 1},
+                                      "Woodcutting Crystal": {"ENCHANTED_SPRUCE_LOG": 96, "ENCHANTED_QUARTZ": 1},
                                       "Mithril Crystal": {"ENCHANTED_MITHRIL": 16, "ENCHANTED_QUARTZ": 1},
                                       "Winter Crystal": {},
                                       "Winter + Mithril Crystal": {"ENCHANTED_MITHRIL": 16, "ENCHANTED_QUARTZ": 1}
                                       }
                           }
-
-
-#%% Main stuff
-
-if __name__ == "__main__":
-    minionNameList = ["Cobblestone", "Obsidian", "Glowstone", "Gravel", "Sand",
-                      "Red Sand", "Mycelium", "Clay", "Ice", "Snow",
-                      "Coal", "Iron", "Gold", "Diamond", "Lapis", "Redstone", "Emerald",
-                      "Quartz", "End Stone", "Mithril", "Hard Stone",
-                      "Wheat", "Melon", "Pumpkin", "Carrot", "Potato",
-                      "Mushroom", "Cactus", "Cocoa Beans", "Sugar Cane", "Nether Wart",
-                      "Flower", "Fishing", "Zombie", "Revenant", "Voidling", "Inferno", "Vampire",
-                      "Skeleton", "Creeper", "Spider", "Tarantula", "Cave Spider",
-                      "Blaze", "Magma Cube", "Enderman", "Ghast", "Slime",
-                      "Cow", "Pig", "Chicken", "Sheep", "Rabbit",
-                      "Oak", "Spruce", "Birch", "Dark Oak", "Acacia", "Jungle"]
-
-    def generate():
-        # for name in minionNameList:
-        #     print(f'"{name}":', '{"drops": {' + f'"{name.lower()}":', '1}, "speed": {11: 1, 12: 1}},')
-        # for name in minionNameList[-6:None]:
-        #     print(f'"{name.lower()}' + ' wood": {"NPC": 2, "xp": {"foraging": 0.1}},')
-        # for name in minionList["Fishing"]["drops"].keys():
-        #     print(f'"{name.lower()}' + '": {"NPC": 5, "xp": {"fishing": 0.1}},')
-        # for item in minionNameList:
-        #     if "enchanted" not in item and "block" not in item:
-        #         print(item)
-        return
-
-    def minionCost_check(starting=1, amount=5):
-        counter = 0
-        for minion_type, minion_data in minionCosts.items():
-            counter += 1
-            if starting > 1:
-                starting -= 1
-                continue
-            if amount <= 0:
-                break
-            print(counter, minion_type)
-            for tier, items in minion_data.items():
-                print(tier, items)
-                time.sleep(0.1)
-            amount -= 1
-        return
