@@ -13,10 +13,13 @@ Notable features:
 Visit https://herodirk.github.io/ for an online manual.
 To start the calculator: run this file with a local python interpreter
 
+Bazaar data from https://api.hypixel.net
+AH data from https://sky.coflnet.com/api (currently only Postcard)
+
 Current major limitations:
     Inferno drop chances might be unaccurate
-    Item prices from AH (like pets and Everburning Flame) have to be updated manually
-    unconfirmed average wool amount from Enchanted Shears
+    Item prices from AH (like pets) have to be updated manually
+    Unconfirmed average wool amount from Enchanted Shears
     For offline calculations of mob minions: Hypixel takes 5 actions to spawn in mobs, this calculator does not account for that
     Not entirely bazaar manipulation proof
     Coop Shenanigans is not an actual option (but can still be applied by using the effective wisdom)
@@ -35,15 +38,23 @@ Herodirk is not affiliated with Hypixel Inc.
 
 #%% imports
 
-import tkinter as tk
-import numpy as np
-import time
-import json
-import urllib.request
-from copy import deepcopy
-import HSB_minion_data as md
-import Hkinter
-import official_calculator_add_ons as Hero_addons
+try:
+    import tkinter as tk
+    import numpy as np
+    import time
+    import json
+    import urllib.request
+    from copy import deepcopy
+    import HSB_minion_data as md
+    import Hkinter
+    import official_calculator_add_ons as Hero_addons
+except ModuleNotFoundError as import_error:
+    missing_package = import_error.name
+    if missing_package in ["HSB_minion_data", "Hkinter", "official_calculator_add_ons"]:
+        print(f"Could not find calculator file {missing_package}.py,\nplease make sure all the calculator files are in the same folder.")
+    else:
+        print(f"Could not find {missing_package} module,\nplease install this module using PIP")
+    exit()
 
 #%% Settings
 
@@ -68,7 +79,8 @@ output_to_clipboard = True
 
 # Visual settings
 color_palette = "dark_red"
-# Color palette of the calculator, current options: "dark", "dark_red"
+# Color palette of the calculator, current options: "dark", "dark_red", "gray_text"
+# For Apple IOS users, use "gray_text"
 
 # Setup Templates
 templateList = {
@@ -140,9 +152,7 @@ templateList = {
         "fishingWisdom": 1060,
         "foragingWisdom": 1060,
     },
-    "GDrag Leveling": {
-        "levelingpet": "Golden Dragon",
-        "expsharepet": "Golden Dragon",
+    "Combat Pet Leveling": {
         "expshareitem": True,
         "taming": 60,
         "falcon_attribute": 10,
@@ -154,10 +164,10 @@ templateList = {
         "amount": 31,
         "fuel": "Inferno Minion Fuel",
         "infernoGrade": "Hypergolic Gabagool",
-        "infernoDistillate": "Crude Gabagool Distillate",
+        "infernoDistillate": "Gabagool Distillate",
         "infernoEyedrops": True,
         "sellLoc": "Best (NPC/Bazaar)",
-        "upgrade1": "Flycatcher",
+        "upgrade1": "Super Compactor 3000",
         "upgrade2": "Flycatcher",
         "chest": "XX-Large",
         "beacon": 5,
@@ -231,7 +241,7 @@ class Calculator(tk.Tk):
                           "amount": {"vtype": "input", "dtype": int, "display": "Amount", "frame": "inputs_minion_grid", "initial": 1, "options": [], "command": None},
                           "fuel": {"vtype": "input", "dtype": str, "display": "Fuel", "frame": "inputs_minion_grid", "initial": "None", "options": list(md.fuel_options.keys()), "command": lambda x: self.multiswitch("fuel", x)},
                           "infernoGrade": {"vtype": "input", "dtype": str, "display": "Grade", "frame": "inputs_minion_grid", "initial": "Hypergolic Gabagool", "options": [md.itemList[grade]["display"] for grade in md.infernofuel_data["grades"].keys()], "command": None},
-                          "infernoDistillate": {"vtype": "input", "dtype": str, "display": "Distillate", "frame": "inputs_minion_grid", "initial": "Crude Gabagool Distillate", "options": [md.itemList[dist]["display"] for dist in md.infernofuel_data["distilates"].keys()], "command": None},
+                          "infernoDistillate": {"vtype": "input", "dtype": str, "display": "Distillate", "frame": "inputs_minion_grid", "initial": "Gabagool Distillate", "options": [md.itemList[dist]["display"] for dist in md.infernofuel_data["distilates"].keys()], "command": None},
                           "infernoEyedrops": {"vtype": "input", "dtype": bool, "display": "Eyedrops", "frame": "inputs_minion_grid", "initial": True, "options": [False, True], "command": None},
                           "hopper": {"vtype": "input", "dtype": str, "display": "Hopper", "frame": "inputs_minion_grid", "initial": "None", "options": list(md.hopper_data.keys()), "command": None},
                           "upgrade1": {"vtype": "input", "dtype": str, "display": "Upgrade 1", "frame": "inputs_minion_grid", "initial": "None", "options": list(md.upgrade_options.keys()), "command": None},
@@ -869,7 +879,7 @@ class Calculator(tk.Tk):
         elif var_key == "beacon":  # special case: add "Beacon" and put the tier in roman numerals
             val = {0: "", 1: "`Beacon I`", 2: "`Beacon II`", 3: "`Beacon III`", 4: "`Beacon IV`", 5: "`Beacon V`"}[self.variables[var_key]["var"].get()]
         elif var_key == "used_storage":  # special case: add available storage to outpur
-            val = f"`{self.variables[var_key]['var'].get()}` (out of `{self.variables["available_storage"]["var"].get()}`)"
+            val = f"`{self.variables[var_key]['var'].get()}` (out of `{self.variables['available_storage']['var'].get()}`)"
         elif var_key == "chest":  # special case: add " Storage" after the size
             if self.variables[var_key]["var"].get() == "None":
                 val = ""
@@ -898,7 +908,7 @@ class Calculator(tk.Tk):
         if val in ["`None`", "`0`", "`0.0`", "", "``", "`False`"] and force is False:
             return None
         if var_key == "freewillcost":
-            val += f" (optimal: apply on t{self.variables["optimal_tier_free_will"]["var"].get()})"
+            val += f" (optimal: apply on t{self.variables['optimal_tier_free_will']['var'].get()})"
         return_str = ""
         if display:
             if "fancy_display" in self.variables[var_key]:
@@ -1333,9 +1343,9 @@ class Calculator(tk.Tk):
         if minion_type in ['Oak', 'Spruce', 'Birch', 'Dark Oak', 'Acacia', 'Jungle']:
             if afk_toggle:
                 # chopped trees have 4 blocks of wood, unknown why offline gives 3
-                md.minionList[minion_type]["drops"][md.getID[f"{minion_type} Wood"]] = 4
+                md.minionList[minion_type]["drops"][md.getID[f"{minion_type} Log"]] = 4
             else:
-                md.minionList[minion_type]["drops"][md.getID[f"{minion_type} Wood"]] = 3
+                md.minionList[minion_type]["drops"][md.getID[f"{minion_type} Log"]] = 3
         if minion_type == "Flower":
             if afk_toggle and self.variables["specialLayout"]["var"].get():
                 # tall flows blocked by string
@@ -1709,7 +1719,7 @@ class Calculator(tk.Tk):
             for pet_slot, pet_info in all_pets.items():
                 self.variables["pets_levelled"]["list"][pet_slot] = sum(pet_info["pet_xp"].values()) / md.max_lvl_pet_xp_amounts[md.all_pets[pet_info["pet"]]["rarity"]]
                 if pet_info["pet"] not in pet_costs:
-                    self.variables["notes"]["list"]["Pet Costs"] = f"{pet_info["pet"]} is not in pet_costs."
+                    self.variables["notes"]["list"]["Pet Costs"] = f"{pet_info['pet']} is not in pet_costs."
                 else:
                     petProfitPerTime += self.variables["pets_levelled"]["list"][pet_slot] * (pet_costs[pet_info["pet"]]["max"] - pet_costs[pet_info["pet"]]["min"])
                 if pet_slot == "levelingpet" and (main_pet_item := self.variables["petxpboost"]["var"].get()) != "None":
@@ -1774,7 +1784,11 @@ class Calculator(tk.Tk):
 
         # Infinite fuel cost
         if minion_fuel != "NONE" and md.itemList[minion_fuel]["upgrade"]["duration"] == 0:
-            total_cost += self.getPrice(minion_fuel, "buy", "bazaar")
+            if minion_fuel == "EVERBURNING_FLAME" and self.getPrice("EVERBURNING_FLAME", "buy", "custom", True) == 0:
+                for item_ID, amount in md.upgrades_material_cost["EVERBURNING_FLAME"].items():
+                    total_cost += amount * self.getPrice(item_ID, "buy", "bazaar")
+            else:
+                total_cost += self.getPrice(minion_fuel, "buy", "bazaar")
 
         # Hopper cost
         if minion_hopper in ["Budget Hopper", "Enchanted Hopper"]:
@@ -1804,10 +1818,8 @@ class Calculator(tk.Tk):
         free_will_price = self.getPrice("FREE_WILL", "buy", "bazaar")
         postcard_price = self.getPrice("POSTCARD", "buy", "custom", True)
         if postcard_price == 0:
-            # reuse the formula for Free Will to get loyalty
-            # on t1 minions, so p = 1 - 0.5 = 0.5
-            # so E(X) = 2
-            final_postcard_cost = 2 * free_will_price
+            # If no price found, use the free will price
+            final_postcard_cost = free_will_price
         else:
             final_postcard_cost = postcard_price
         if self.variables["free_will"]["var"].get() is True:
@@ -1823,6 +1835,11 @@ class Calculator(tk.Tk):
             self.variables["notes"]["list"]["Free Will"] = f"per minion, apply {1 / (0.5 + 0.04 * (optimal - 1)):.2} Free Wills on Tier {optimal}"
             self.variables["freewillcost"]["var"].set(tiered_free_will[optimal] * minion_amount)
 
+        # Storage Chest cost
+        if self.variables["chest"]["var"].get() != "None":
+            chest_ID = md.getID[self.variables["chest"]["var"].get()]
+            total_cost += self.getPrice(chest_ID, "buy", "bazaar")
+        
         # multiply by minion amount
         total_cost *= minion_amount
 
@@ -1845,11 +1862,6 @@ class Calculator(tk.Tk):
         if self.variables["potatoTalisman"]["var"].get():
             total_cost += self.getPrice("POTATO_TALISMAN", "buy", "custom", True)
 
-        # Storage Chest cost
-        if self.variables["chest"]["var"].get() != "None":
-            chest_ID = md.getID[self.variables["chest"]["var"].get()]
-            total_cost += self.getPrice(chest_ID, "buy", "bazaar")
-        
         # Attribute costs
         if self.variables["toucan_attribute"]["var"].get() != 0:
             total_cost += md.attribute_shards["Epic"][self.variables["toucan_attribute"]["var"].get()] * self.getPrice("SHARD_TOUCAN", "buy", "bazaar")
@@ -1955,8 +1967,33 @@ class Calculator(tk.Tk):
                 else:
                     item_data["prices"][f"{action}Price"] = top_percent_avg_price
         print("BAZAAR: Processing complete")
+        self.update_AH()
         return
 
+    def update_AH(self):
+        """
+        Currently: Updates price of Postcard.
+        In the future: Updates Auction House prices.
+
+        AH data from https://sky.coflnet.com/api
+
+        Returns
+        -------
+        None.
+
+        """
+        
+        try:
+            postcard_url = r"https://sky.coflnet.com/api/item/price/POSTCARD"
+            req = urllib.request.Request(postcard_url, headers={'User-Agent': f"Minion Calculator v{self.version.get()} (Python)", })
+            f = urllib.request.urlopen(req)
+            call_data = f.read().decode('utf-8')
+        except Exception as error:
+            print(f"ERROR: Could not finish API call to Coflnet\n{error}")
+            return
+        raw_data = json.loads(call_data)
+        md.itemList["POSTCARD"]["prices"]["custom"] = raw_data["mode"]
+        return
     def update_GUI(self):
         """
         Creates an array for the listbox out of the list storage of self.variables with "vtype" equal to "list"
