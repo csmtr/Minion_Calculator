@@ -111,7 +111,7 @@ def inferno_minion_loop(calculator):
     calculated_setup_bad_luck_profits = {}
     calculated_setup_costs = {}
 
-    cost_filter = 6000000000
+    cost_filter = 10000000000
     # input the full number as filter, so no abbreviations like "6B"
     # saving this file and restarting the calculator is needed to apply changes.
     # will make this into a good working input in the GUI later.
@@ -140,7 +140,7 @@ def inferno_minion_loop(calculator):
         top_minion = max(calculated_setup_bad_luck_profits, key=calculated_setup_bad_luck_profits.get)
         print(top_minion, ":", calculator.reduced_number(calculated_setup_bad_luck_profits[top_minion]), ",", calculator.reduced_number(calculated_setup_costs[top_minion]), ",", calculator.reduced_number(calculated_setup_profits[top_minion]))
         del calculated_setup_bad_luck_profits[top_minion]
-    print(f"Bad Luck Profit: + {calculator.reduced_number(calculator.getPrice("INFERNO_VERTEX", "sell", "bazaar"), 2)} per Inferno Vertex")
+    print(f"Bad Luck Profit: + {calculator.reduced_number(calculator.getPrice('INFERNO_VERTEX', 'sell', 'bazaar'), 2)} per Inferno Vertex")
     print("\n")
 
 
