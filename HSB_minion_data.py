@@ -152,13 +152,13 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'ENCHANTED_MYCELIUM_CUBE': {'display': 'Enchanted Mycelium Cube',
                                         "prices": {'npc': 128000},
                                         'xp': {'mining': 5120}},
-            'CLAY_BALL': {'display': 'Clay',
+            'CLAY_BALL': {'display': 'Clay Ball',
                           "prices": {'npc': 3},
                           'xp': {'fishing': 0.1}},
-            'CLAY': {'display': 'Clay Block',  # not in bazaar
+            'CLAY': {'display': 'Clay',  # not in bazaar
                      "prices": {'npc': 12},
                      'xp': {'fishing': 0.4}},
-            'ENCHANTED_CLAY_BALL': {'display': 'Enchanted Clay',
+            'ENCHANTED_CLAY_BALL': {'display': 'Enchanted Clay Ball',
                                     "prices": {'npc': 480},
                                     'xp': {'fishing': 16}},
             'ENCHANTED_CLAY_BLOCK': {'display': 'Enchanted Clay Block', # all correct
@@ -195,7 +195,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                      "prices": {'npc': 2},
                      'xp': {'mining': 0.3},
                      'upgrade': {'speed': 5, 'drop': 1, 'duration': 1800}},
-            'COAL_BLOCK': {'display': 'Block Of Coal',  # not in bazaar
+            'COAL_BLOCK': {'display': 'Block of Coal',  # not in bazaar
                            "prices": {'npc': 18},
                            'xp': {'mining': 2.7},
                            'upgrade': {'speed': 5, 'drop': 1, 'duration': 18000}},
@@ -203,7 +203,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                                "prices": {'npc': 320},
                                'xp': {'mining': 48},
                                'upgrade': {'speed': 10, 'drop': 1, 'duration': 86400}},
-            'ENCHANTED_COAL_BLOCK': {'display': 'Enchanted Block Of Coal',
+            'ENCHANTED_COAL_BLOCK': {'display': 'Enchanted Coal Block',
                                      "prices": {'npc': 51000},  # correct
                                      'xp': {'mining': 7680}},
             'IRON_ORE': {'display': 'Iron Ore',  # not in bazaar
@@ -212,10 +212,10 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'IRON_INGOT': {'display': 'Iron Ingot',
                            "prices": {'npc': 3},
                            'xp': {'mining': 0.3}},
-            'IRON_BLOCK': {'display': 'Block Of Iron',  # not in bazaar
+            'IRON_BLOCK': {'display': 'Block of Iron',  # not in bazaar
                            "prices": {'npc': 27},
                            'xp': {'mining': 2.7}},
-            'ENCHANTED_IRON': {'display': 'Enchanted Iron',
+            'ENCHANTED_IRON': {'display': 'Enchanted Iron Ingot',
                                "prices": {'npc': 480},
                                'xp': {'mining': 48}},
             'ENCHANTED_IRON_BLOCK': {'display': 'Enchanted Iron Block',
@@ -227,10 +227,10 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'GOLD_INGOT': {'display': 'Gold Ingot',
                            "prices": {'npc': 4},
                            'xp': {'mining': 0.4}},
-            'GOLD_BLOCK': {'display': 'Block Of Gold',  # not in bazaar
+            'GOLD_BLOCK': {'display': 'Block of Gold',  # not in bazaar
                            "prices": {'npc': 36},
                            'xp': {'mining': 3.6}},
-            'ENCHANTED_GOLD': {'display': 'Enchanted Gold',
+            'ENCHANTED_GOLD': {'display': 'Enchanted Gold Ingot',
                                "prices": {'npc': 640},
                                'xp': {'mining': 64}},
             'ENCHANTED_GOLD_BLOCK': {'display': 'Enchanted Gold Block',  # correct
@@ -239,7 +239,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'DIAMOND': {'display': 'Diamond',
                         "prices": {'npc': 8},
                         'xp': {'mining': 0.4}},
-            'DIAMOND_BLOCK': {'display': 'Block Of Diamond',  # not in bazaar
+            'DIAMOND_BLOCK': {'display': 'Block of Diamond',  # not in bazaar
                               "prices": {'npc': 72},
                               'xp': {'mining': 3.6}},
             'ENCHANTED_DIAMOND': {'display': 'Enchanted Diamond',
@@ -251,22 +251,22 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'INK_SACK:4': {'display': 'Lapis Lazuli',
                            "prices": {'npc': 1},
                            'xp': {'mining': 0.1}},
-            'LAPIS_BLOCK': {'display': 'Lapis Lazuli Block',  # not in bazaar
+            'LAPIS_BLOCK': {'display': 'Block of Lapis Lazuli',  # not in bazaar
                             "prices": {'npc': 9},
                             'xp': {'mining': 0.9}},
             'ENCHANTED_LAPIS_LAZULI': {'display': 'Enchanted Lapis Lazuli',
                                        "prices": {'npc': 160},
                                        'xp': {'mining': 16}},
-            'ENCHANTED_LAPIS_LAZULI_BLOCK': {'display': 'Enchanted Lapis Block',
+            'ENCHANTED_LAPIS_LAZULI_BLOCK': {'display': 'Enchanted Lapis Lazuli Block',
                                              "prices": {'npc': 25600},
                                              'xp': {'mining': 2560}},
-            'REDSTONE': {'display': 'Redstone',
+            'REDSTONE': {'display': 'Redstone Dust',
                          "prices": {'npc': 1},
                          'xp': {'mining': 0.2}},
-            'REDSTONE_BLOCK': {'display': 'Block Of Redstone',  # not in bazaar
+            'REDSTONE_BLOCK': {'display': 'Block of Redstone',  # not in bazaar
                                "prices": {'npc': 9},
                                'xp': {'mining': 1.8}},
-            'ENCHANTED_REDSTONE': {'display': 'Enchanted Redstone',
+            'ENCHANTED_REDSTONE': {'display': 'Enchanted Redstone Dust',
                                    "prices": {'npc': 160},
                                    'xp': {'mining': 32}},
             'ENCHANTED_REDSTONE_BLOCK': {'display': 'Enchanted Redstone Block',
@@ -275,7 +275,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'EMERALD': {'display': 'Emerald',
                         "prices": {'npc': 6},
                         'xp': {'mining': 0.4}},
-            'EMERALD_BLOCK': {'display': 'Block Of Emerald',  # not in bazaar
+            'EMERALD_BLOCK': {'display': 'Block of Emerald',  # not in bazaar
                               "prices": {'npc': 54},
                               'xp': {'mining': 3.6}},
             'ENCHANTED_EMERALD': {'display': 'Enchanted Emerald',
@@ -287,10 +287,10 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'QUARTZ': {'display': 'Nether Quartz',
                        "prices": {'npc': 4},
                        'xp': {'mining': 0.3}},
-            'QUARTZ_BLOCK': {'display': 'Block Of Quartz',  # not in bazaar
+            'QUARTZ_BLOCK': {'display': 'Block of Quartz',  # not in bazaar
                              "prices": {'npc': 16},
                              'xp': {'mining': 1.2}},
-            'ENCHANTED_QUARTZ': {'display': 'Enchanted Quartz',
+            'ENCHANTED_QUARTZ': {'display': 'Enchanted Nether Quartz',
                                  "prices": {'npc': 640},
                                  'xp': {'mining': 48}},
             'ENCHANTED_QUARTZ_BLOCK': {'display': 'Enchanted Quartz Block',
@@ -341,19 +341,19 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'ENCHANTED_SEEDS': {'display': 'Enchanted Seeds',
                                 "prices": {'npc': 480},
                                 'xp': {'farming': 16}},
-            'BOX_OF_SEEDS': {'display': 'Box Of Seeds',
+            'BOX_OF_SEEDS': {'display': 'Box of Seeds',
                              "prices": {'npc': 76800},
                              'xp': {'farming': 2560}},
-            'MELON': {'display': 'Melon',
+            'MELON': {'display': 'Melon Slice',
                       "prices": {'npc': 2},
                       'xp': {'farming': 0.1}},
-            'MELON_BLOCK': {'display': 'Melon Block',
+            'MELON_BLOCK': {'display': 'Melon',
                             "prices": {'npc': 18},
                             'xp': {'farming': 0.9}},
-            'ENCHANTED_MELON': {'display': 'Enchanted Melon',
+            'ENCHANTED_MELON': {'display': 'Enchanted Melon Slice',
                                 "prices": {'npc': 320},
                                 'xp': {'farming': 16}},
-            'ENCHANTED_MELON_BLOCK': {'display': 'Enchanted Melon Block',
+            'ENCHANTED_MELON_BLOCK': {'display': 'Enchanted Melon',
                                       "prices": {'npc': 51200},
                                       'xp': {'farming': 2560}},
             'PUMPKIN': {'display': 'Pumpkin',
@@ -462,7 +462,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'ENCHANTED_POPPY': {'display': 'Enchanted Poppy',
                                 "prices": {'npc': 576},
                                 'xp': {'foraging': 57.6}},
-            'RAW_FISH': {'display': 'Raw Fish',
+            'RAW_FISH': {'display': 'Raw Cod',
                          "prices": {'npc': 6},
                          'xp': {'fishing': 0.5}},
             'RAW_FISH:1': {'display': 'Raw Salmon',
@@ -471,7 +471,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'RAW_FISH:3': {'display': 'Pufferfish',
                            "prices": {'npc': 15},
                            'xp': {'fishing': 1}},
-            'RAW_FISH:2': {'display': 'Clownfish',
+            'RAW_FISH:2': {'display': 'Tropical Fish',
                            "prices": {'npc': 20},
                            'xp': {'fishing': 2}},
             'PRISMARINE_CRYSTALS': {'display': 'Prismarine Crystals',
@@ -483,7 +483,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'SPONGE': {'display': 'Sponge',
                        "prices": {'npc': 50},
                        'xp': {'fishing': 0.5}},
-            'ENCHANTED_RAW_FISH': {'display': 'Enchanted Raw Fish',
+            'ENCHANTED_RAW_FISH': {'display': 'Enchanted Raw Cod',
                                    "prices": {'npc': 960},
                                    'xp': {'fishing': 80}},
             'ENCHANTED_RAW_SALMON': {'display': 'Enchanted Raw Salmon',
@@ -492,7 +492,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'ENCHANTED_PUFFERFISH': {'display': 'Enchanted Pufferfish',
                                      "prices": {'npc': 2400},
                                      'xp': {'fishing': 160}},
-            'ENCHANTED_CLOWNFISH': {'display': 'Enchanted Clownfish',
+            'ENCHANTED_CLOWNFISH': {'display': 'Enchanted Tropical Fish',
                                     "prices": {'npc': 3200},
                                     'xp': {'fishing': 320}},
             'ENCHANTED_PRISMARINE_CRYSTALS': {'display': 'Enchanted Prismarine Crystals',
@@ -504,7 +504,7 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'ENCHANTED_SPONGE': {'display': 'Enchanted Sponge',
                                  "prices": {'npc': 2000},
                                  'xp': {'fishing': 20}},
-            'ENCHANTED_COOKED_FISH': {'display': 'Enchanted Cooked Fish',  # correct
+            'ENCHANTED_COOKED_FISH': {'display': 'Enchanted Cooked Cod',  # correct
                                       "prices": {'npc': 150000},
                                       'xp': {'fishing': 12800}},
             'ENCHANTED_COOKED_SALMON': {'display': 'Enchanted Cooked Salmon',
@@ -560,9 +560,9 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'REAPER_PEPPER': {'display': 'Reaper Pepper',
                               "prices": {'npc': 0},
                               'xp': {'combat': 0}},
-            'GABAGOOL_THE_FISH': {'display': 'Gabagool The Fish',  # not in bazaar (AH)
+            'GABAGOOL_THE_FISH': {'display': 'Gabagool the Fish',  # not in bazaar (AH)
                                   "prices": {"custom": 13000000},  # 2025-8-31
-                                  'xp': {'combat': 0}},  # unsure if correctly implemented (just like dyes)
+                                  'xp': {'combat': 0}},  # unsure if correctly implemented
             'HYPERGOLIC_IONIZED_CERAMICS': {'display': 'Hypergolic Ionized Ceramics',
                                             "prices": {'npc': 0},
                                             'xp': {'combat': 0}},
@@ -659,10 +659,10 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'PORK': {'display': 'Raw Porkchop',  # correct
                      "prices": {'npc': 5},
                      'xp': {'farming': 0.2}},
-            'ENCHANTED_PORK': {'display': 'Enchanted Pork',  # correct
+            'ENCHANTED_PORK': {'display': 'Enchanted Raw Porkchop',  # correct
                                "prices": {'npc': 800},
                                'xp': {'farming': 32}},
-            'ENCHANTED_GRILLED_PORK': {'display': 'Enchanted Grilled Pork',  # correct
+            'ENCHANTED_GRILLED_PORK': {'display': 'Enchanted Cooked Pork',  # correct
                                        "prices": {'npc': 128000},
                                        'xp': {'farming': 5120}},
             'RAW_CHICKEN': {'display': 'Raw Chicken',
@@ -694,13 +694,13 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'WOOL': {'display': 'White Wool',
                      "prices": {'npc': 2},
                      'xp': {'farming': 0.1}},
-            'MUTTON': {'display': 'Mutton',
+            'MUTTON': {'display': 'Raw Mutton',
                        "prices": {'npc': 5},
                        'xp': {'farming': 0.1}},
             'ENCHANTED_WOOL': {'display': 'Enchanted Wool',
                                "prices": {'npc': 320},
                                'xp': {'farming': 16}},
-            'ENCHANTED_MUTTON': {'display': 'Enchanted Mutton',
+            'ENCHANTED_MUTTON': {'display': 'Enchanted Raw Mutton',
                                  "prices": {'npc': 800},
                                  'xp': {'farming': 16}},
             'ENCHANTED_COOKED_MUTTON': {'display': 'Enchanted Cooked Mutton',
@@ -727,40 +727,40 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'ENCHANTED_RABBIT_HIDE': {'display': 'Enchanted Rabbit Hide',  # both correct
                                       "prices": {'npc': 800},
                                       'xp': {'farming': 115}},
-            'LOG': {'display': 'Oak Wood',
+            'LOG': {'display': 'Oak Log',
                     "prices": {'npc': 2},
                     'xp': {'foraging': 0.1}},
-            'LOG:1': {'display': 'Spruce Wood',
+            'LOG:1': {'display': 'Spruce Log',
                       "prices": {'npc': 2},
                       'xp': {'foraging': 0.1}},
-            'LOG:2': {'display': 'Birch Wood',
+            'LOG:2': {'display': 'Birch Log',
                       "prices": {'npc': 2},
                       'xp': {'foraging': 0.1}},
-            'LOG_2:1': {'display': 'Dark Oak Wood',
+            'LOG_2:1': {'display': 'Dark Oak Log',
                         "prices": {'npc': 2},
                         'xp': {'foraging': 0.1}},
-            'LOG_2': {'display': 'Acacia Wood',
+            'LOG_2': {'display': 'Acacia Log',
                       "prices": {'npc': 2},
                       'xp': {'foraging': 0.1}},
-            'LOG:3': {'display': 'Jungle Wood',
+            'LOG:3': {'display': 'Jungle Log',
                       "prices": {'npc': 2},
                       'xp': {'foraging': 0.1}},
-            'ENCHANTED_OAK_LOG': {'display': 'Enchanted Oak Wood',
+            'ENCHANTED_OAK_LOG': {'display': 'Enchanted Oak Log',
                                   "prices": {'npc': 320},
                                   'xp': {'foraging': 16}},
-            'ENCHANTED_SPRUCE_LOG': {'display': 'Enchanted Spruce Wood',
+            'ENCHANTED_SPRUCE_LOG': {'display': 'Enchanted Spruce Log',
                                      "prices": {'npc': 320},
                                      'xp': {'foraging': 16}},
-            'ENCHANTED_BIRCH_LOG': {'display': 'Enchanted Birch Wood',
+            'ENCHANTED_BIRCH_LOG': {'display': 'Enchanted Birch Log',
                                     "prices": {'npc': 320},
                                     'xp': {'foraging': 16}},
-            'ENCHANTED_DARK_OAK_LOG': {'display': 'Enchanted Dark Oak Wood',
+            'ENCHANTED_DARK_OAK_LOG': {'display': 'Enchanted Dark Oak Log',
                                        "prices": {'npc': 320},
                                        'xp': {'foraging': 16}},
-            'ENCHANTED_ACACIA_LOG': {'display': 'Enchanted Acacia Wood',
+            'ENCHANTED_ACACIA_LOG': {'display': 'Enchanted Acacia Log',
                                      "prices": {'npc': 320},
                                      'xp': {'foraging': 16}},
-            'ENCHANTED_JUNGLE_LOG': {'display': 'Enchanted Jungle Wood',
+            'ENCHANTED_JUNGLE_LOG': {'display': 'Enchanted Jungle Log',
                                      "prices": {'npc': 320},
                                      'xp': {'foraging': 16}},
             'ENCHANTED_CHARCOAL': {'display': 'Enchanted Charcoal',
@@ -793,9 +793,6 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             'PLASMA_BUCKET': {'display': 'Plasma Bucket',
                               "prices": {},
                               "upgrade": {'speed': 35, 'drop': 1, 'duration': 0}},
-            'EVERBURNING_FLAME': {'display': 'Everburning Flame',  # not in bazaar (AH)
-                                  "prices": {"custom": 15500000},  # 2025-8-31
-                                  "upgrade": {'speed': 40, 'drop': 1, 'duration': 0}},
             'INFERNO_FUEL': {'display': 'Inferno Minion Fuel',
                              "prices": {"custom": 1},  # this custom price will be automatically updated by the calculator based on grade and distilate
                              "upgrade": {'speed': 0, 'drop': 1, 'duration': 86400}},
@@ -881,9 +878,9 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                                      "prices": {"custom": 5500}},
             'NETHER_STALK_DISTILLATE': {'display': 'Nether Wart Distillate',
                                         "prices": {"custom": 5000}},
-            'GLOWSTONE_DUST_DISTILLATE': {'display': 'Glowstone Dust Distillate',
+            'GLOWSTONE_DUST_DISTILLATE': {'display': 'Glowstone Distillate',
                                           "prices": {"custom": 4900}},
-            'CRUDE_GABAGOOL_DISTILLATE': {'display': 'Crude Gabagool Distillate',
+            'CRUDE_GABAGOOL_DISTILLATE': {'display': 'Gabagool Distillate',
                                           "prices": {"custom": 85000}},
             'CAPSAICIN_EYEDROPS_NO_CHARGES': {'display': 'Capsaicin Eyedrops',
                                               "prices": {"custom": 1700000}},
@@ -915,6 +912,8 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
                               "prices": {"custom": 350}},
             "TARANTULA_SILK": {'display': "Tarantula Silk",
                                "prices": {"custom": 250000}},
+            "FLAMES": {'display': "Flames",
+                       "prices": {}},
             "FREE_WILL": {'display': "Free Will",
                           'prices': {}},
             "POTATO_TALISMAN": {'display': "Potato Talisman",  # not in bazaar (AH) 
@@ -986,9 +985,13 @@ itemList = {"NONE": {'display': "None",  # not in bazaar (doesn't exist)
             # The following items are on the Auction House, but can be created from items from the bazaar
             # If the custom price of an item here is set to 0, the equivalent price from bazaar will be calculated
             # Otherwise it will use the inputted number.
+            'EVERBURNING_FLAME': {'display': 'Everburning Flame',  # not in bazaar (AH)
+                                  "prices": {"custom": 0},
+                                  "upgrade": {'speed': 40, 'drop': 1, 'duration': 0}},
+            # equivalent bazaar price: 1 Plasma Bucket, 16 Flames, 2 Enchanted Sulphur Cubes, 2 Enchanted Red Sand Cubes
             "POSTCARD": {'display': "Postcard",
-                         'prices': {"custom": 7000000}},  # not in bazaar (AH)
-            # equivalent bazaar price: Postcard price = 2 * Free Will price.
+                         'prices': {"custom": 0}},  # not in bazaar (AH)
+            # equivalent bazaar price: taken from auction house through https://sky.coflnet.com/api/
             "PET_ITEM_EXP_SHARE": {'display': "Exp Share",
                                    'prices': {"custom": 0}},
             # equivalent bazaar price: Exp Share price = Exp Share Core price + 72 * Enchanted Gold price
@@ -1016,17 +1019,17 @@ getID = {'Hypergolic Gabagool': 'HYPERGOLIC_GABAGOOL',
          'Magma Cream Distillate': 'MAGMA_CREAM_DISTILLATE',
          'Blaze Rod Distillate': 'BLAZE_ROD_DISTILLATE',
          'Nether Wart Distillate': 'NETHER_STALK_DISTILLATE',
-         'Glowstone Dust Distillate': 'GLOWSTONE_DUST_DISTILLATE',
-         'Crude Gabagool Distillate': 'CRUDE_GABAGOOL_DISTILLATE',
+         'Glowstone Distillate': 'GLOWSTONE_DUST_DISTILLATE',
+         'Gabagool Distillate': 'CRUDE_GABAGOOL_DISTILLATE',
          'Capsaicin Eyedrops': 'CAPSAICIN_EYEDROPS_NO_CHARGES',
          "Budget Hopper": "BUDGET_HOPPER",
          "Enchanted Hopper": "ENCHANTED_HOPPER",
-         'Oak Wood': 'LOG',
-         'Spruce Wood': 'LOG:1',
-         'Birch Wood': 'LOG:2',
-         'Dark Oak Wood': 'LOG_2:1',
-         'Acacia Wood': 'LOG_2',
-         'Jungle Wood': 'LOG:3',
+         'Oak Log': 'LOG',
+         'Spruce Log': 'LOG:1',
+         'Birch Log': 'LOG:2',
+         'Dark Oak Log': 'LOG_2:1',
+         'Acacia Log': 'LOG_2',
+         'Jungle Log': 'LOG:3',
          'Small': "SMALL_ENCHANTED_CHEST",
          'Medium': "MEDIUM_ENCHANTED_CHEST",
          'Large': "LARGE_ENCHANTED_CHEST",
@@ -1498,7 +1501,7 @@ minionList = {
                   "speed": {1: 26, 2: 26, 3: 24, 4: 24, 5: 22, 6: 22, 7: 19, 8: 19, 9: 16, 10: 16, 11: 13}},
     "Mithril": {"drops": {"MITHRIL_ORE": 2},
                 "speed": {1: 80, 2: 80, 3: 75, 4: 75, 5: 70, 6: 70, 7: 65, 8: 65, 9: 60, 10: 60, 11: 55, 12: 50}},
-    "Hard Stone": {"drops": {"HARD_STONE": 1},
+    "Hard Stone": {"drops": {"HARD_STONE": 2},  # correct
                    "speed": {1: 14, 2: 14, 3: 12, 4: 12, 5: 10, 6: 10, 7: 9, 8: 9, 9: 8, 10: 8, 11: 7, 12: 6}},
     "Wheat": {"drops": {"WHEAT": 1, "SEEDS": 1.5},  # correct
               "speed": {1: 15, 2: 15, 3: 13, 4: 13, 5: 11, 6: 11, 7: 10, 8: 10, 9: 9, 10: 9, 11: 8, 12: 7},
@@ -1800,15 +1803,19 @@ extraMinionCosts = {"Custom": {6: {"TESTING": 2}, 12: {"COINS": 1, "NON_EXISTENT
 
 #%% other crafting costs
 
-upgrades_material_cost = {"beacon": {1: {"ENCHANTED_MITHRIL": 192, "STARFALL": 64},
-                                     2: {"REFINED_MITHRIL": 5},
-                                     3: {"REFINED_MITHRIL": 10},
-                                     4: {"REFINED_MITHRIL": 20, "PLASMA": 1},
-                                     5: {"REFINED_MITHRIL": 40, "PLASMA": 5}},
-                          "crystal": {"Farm Crystal": {"ENCHANTED_PUMPKIN": 96, "ENCHANTED_QUARTZ": 1},
-                                      "Woodcutting Crystal": {"ENCHANTED_SPRUCE_LOG": 96, "ENCHANTED_QUARTZ": 1},
-                                      "Mithril Crystal": {"ENCHANTED_MITHRIL": 16, "ENCHANTED_QUARTZ": 1},
-                                      "Winter Crystal": {},
-                                      "Winter + Mithril Crystal": {"ENCHANTED_MITHRIL": 16, "ENCHANTED_QUARTZ": 1}
-                                      }
-                          }
+upgrades_material_cost = {
+    "beacon": {
+        1: {"ENCHANTED_MITHRIL": 192, "STARFALL": 64},
+        2: {"REFINED_MITHRIL": 5},
+        3: {"REFINED_MITHRIL": 10},
+        4: {"REFINED_MITHRIL": 20, "PLASMA": 1},
+        5: {"REFINED_MITHRIL": 40, "PLASMA": 5}},
+    "crystal": {
+        "Farm Crystal": {"ENCHANTED_PUMPKIN": 96, "ENCHANTED_QUARTZ": 1},
+        "Woodcutting Crystal": {"ENCHANTED_SPRUCE_LOG": 96, "ENCHANTED_QUARTZ": 1},
+        "Mithril Crystal": {"ENCHANTED_MITHRIL": 16, "ENCHANTED_QUARTZ": 1},
+        "Winter Crystal": {},
+        "Winter + Mithril Crystal": {"ENCHANTED_MITHRIL": 16, "ENCHANTED_QUARTZ": 1}
+        },
+    "EVERBURNING_FLAME": {"PLASMA_BUCKET": 1, "FLAMES": 16, "ENCHANTED_SULPHUR_CUBE": 2, "ENCHANTED_RED_SAND_CUBE": 2}
+    }
