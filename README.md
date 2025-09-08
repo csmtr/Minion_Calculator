@@ -10,11 +10,14 @@ Notable features:<br>
 | Pet leveling with exp share calculations<br>
 | Setup cost calculations<br>
 Visit https://herodirk.github.io/ for an online manual.<br>
-To start the calculator: run this file with a local python interpreter
+To start the calculator: run the file `main.py` with a local python interpreter
+
+Bazaar data from https://api.hypixel.net
+AH data from https://sky.coflnet.com/api (currently only Postcard)
 
 Current major limitations:<br>
 | Inferno drop chances might be unaccurate<br>
-| Item prices from AH (like pets and Everburning Flame) have to be updated manually<br>
+| Item prices from AH (like pets) have to be updated manually<br>
 | Unconfirmed average wool amount from Enchanted Shears<br>
 | For offline calculations of mob minions: Hypixel takes 5 actions to spawn in mobs, this calculator does not account for that<br>
 | Not entirely bazaar manipulation proof<br>
