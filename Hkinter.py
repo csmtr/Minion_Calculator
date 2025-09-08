@@ -32,6 +32,17 @@ color_palettes = {
         "text": "white",
         "selected_text": "black",
         "selection": "light gray"
+        },
+    "gray_text": {
+        "background": "black",
+        "frame_background": "#200808",
+        "controls_frame": "#662626",
+        "widget_background": "#541313",
+        "widget_border": "#3C0C0C",
+        "active_background": "#3C0C0C",
+        "text": "gray",
+        "selected_text": "black",
+        "selection": "light gray"
         }
     }
 
