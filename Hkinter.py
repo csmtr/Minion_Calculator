@@ -7,6 +7,7 @@ A module containing functions to assit in the creation and handling of Tkinter w
 """
 
 import tkinter as tk
+from tkinter import ttk
 import numpy as np
 
 
@@ -253,7 +254,10 @@ class Hk():
         var = self.defVar(dtype, initial=initial)
         if dtype != bool:
             if len(options) != 0:
-                entry = tk.OptionMenu(frame, var, *options, command=cmd)
+                entry = ttk.Combobox(frame, textvariable=var, values=options, state="readonly")
+                entry.set(initial if initial is not None else options[0])
+                if cmd:
+                    entry.bind('<<ComboboxSelected>>', lambda event: cmd(var.get()))
             else:
                 entry = tk.Entry(frame, textvariable=var)
         else:
@@ -729,7 +733,7 @@ class Hk():
 
         self.edit_vars_mainframe = tk.Frame(self.main, background=self.main.colors["background"])
         self.edit_vars_mainframe.place(anchor="c", relx=0.5, rely=0.5, relwidth=0.2, relheight=0.5)
-        
+
         self.createFrames(self.edit_vars_mainframe, frame_keys=[["edit_vars"]], grid_frames=True, grid_size=0.96, border=0.007, relControlsHeight=0.1)
         self.edit_vars_options = tk.Frame(self.edit_vars_mainframe, background=self.main.colors["controls_frame"])
         self.edit_vars_options.place(rely=0.9, relheight=0.1, relwidth=1)
@@ -770,7 +774,7 @@ class Hk():
     def edit_confirm(self, exit_func, vars=[]):
         try:
             if self.version == "MINION":
-                for var_key in vars: 
+                for var_key in vars:
                     self.main.variables[var_key]["var"].get()
             else:
                 for var_key in vars:
